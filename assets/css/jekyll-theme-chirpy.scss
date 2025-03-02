@@ -7,12 +7,28 @@
 {%- endif -%}
 ';
 
-/* append your custom style below */
+/* custom style */
 
-h1, h2, h3, h4, h5, h6, span, header {
-    font-family: 'JetBrains Mono', monospace;
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+
+body, h1, h2, h3, h4, h5, h6, p, a, li, span, header, footer, article, section, nav {
+    font-family: 'DM Mono', monospace !important;
+    font-weight: 300 !important;
+    font-style: normal;
+}
+
+
+/*
+a.site-title, h1, h2, h3, h4, h5, h6, span, header, section {
+    font-family: 'DM Mono', monospace !important;
+    font-weight: 300 !important;
+    font-style: normal;
 }
 
 a, p, li {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 400;
 }
+*/
