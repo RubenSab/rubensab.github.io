@@ -3,9 +3,8 @@ layout: post
 title: 'How to Build and Publish a Simple Linux Command Line Tool with Python on GitHub:
   a Guided Example'
 date: 2024-12-19 19:26 +0100
-image: /assets/img/dlmv_screenshot.webp
+image: "/assets/img/dlmv_screenshot.webp"
 ---
-
 Let’s find out about it!
 
 Going from coding that tiny random python script which makes your life just a bit easier by solving that very specific problem you had, to packaging and porting it worldwide on Github could seem a daunting task for the unitiated; but I promise, it really isn’t.
@@ -26,13 +25,13 @@ During the **four steps** or this example ([https://github.com/RubenSab/dlmv](ht
 
 Enough talking, let’s start building:
 
-# 1. Our goal
+## 1. Our goal
 
 Let’s say we need to code a handy script that takes the n-th most recent files in the Downloads folder and moves them automatically to whatever folder we are currently in inside our terminal.
 
 We’ll call it dlmv.py; and for now, if we want to stick to that simple goal and no more, the only input required from the user is the *number of files* they want to move.
 
-## The arguments syntax
+### The arguments syntax
 
 What CLI argument syntax would be the fastest and most efficient to achieve this?
 
@@ -40,7 +39,7 @@ Of course dlmv n with n being the (optional) number of files to move (with defau
 
 Other than this, we need to take in account two other arguments in order to respect the GNU Coding Standards, namely `--help` and its shorthand `-h` , but **argparse** is going to take care of this automatically.
 
-## The code (you can skip to the packaging part)
+### The code (you can skip to the packaging part)
 
 ``` python
 import argparse
@@ -104,7 +103,7 @@ Finally ensure your script is ready to be executed with the right python interpr
 #!/usr/bin/env python3
 ```
 
-# 2. Create an install.sh
+## 2. Create an install.sh
 
 **PROS**: More universal across platforms (even Windows!), simple for non-developers and clickable.
 
@@ -128,7 +127,7 @@ echo "Installation complete! You can now run 'dlmv' from the terminal."
 
 > The end user will need to install our script using ./install.sh in its directory.
 
-# 2. (Alternative) Create the Makefile
+## 2. (Alternative) Create the Makefile
 
 **PROS**: Widely used for development, extensible, allow install, uninstall and clean commands.
 
@@ -161,7 +160,7 @@ uninstall:
 
 > The end user will need to install our script using make install in its directory.
 
-# 3. Package everything into a tar.gz (or zip on Windows)
+## 3. Package everything into a tar.gz (or zip on Windows)
 
 Open the terminal and write:
 ``` bash
@@ -172,9 +171,9 @@ or
 zip -r dlmv_installer.zip dlmv.py Makefile install.sh
 ```
 
-# 4. Create a release on Github
+## 4. Create a release on Github
 
-## Push your Code
+### Push your Code
 
 Go on [Github](http://github.com), create a new repository with a name of your choice, then click on the green button on the top-right corner and copy the link shown, then open the terminal and clone the repo:
 
@@ -190,7 +189,7 @@ git commit -m "Prepare for release"
 git push origin main
 ```
 
-## **Create a Tag**
+### Create a Tag
 
 You need a **Git tag** for the release, create it and push it to the main branch:
 
@@ -199,7 +198,7 @@ git tag v1.0.0
 git push origin v1.0.0
 ```
 
-## Create the Release
+### Create the Release
 
 1. Go to your GitHub repository.
 
@@ -215,7 +214,7 @@ git push origin v1.0.0
 
 7. Click **Publish Release**.
 
-# Conclusion
+## Conclusion
 
 See? That wasn’t so hard!
 
