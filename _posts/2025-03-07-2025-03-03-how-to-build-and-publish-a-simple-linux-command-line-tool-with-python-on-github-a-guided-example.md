@@ -19,7 +19,7 @@ During the **four steps** or this example ([https://github.com/RubenSab/dlmv](ht
 
 - a [tar.gz archive](https://www.geeksforgeeks.org/how-to-compress-and-extract-files-using-the-tar-command-on-linux/) to package everything;
 
-- [Github](http://github.com) to publish our project and its releases.
+- [Github](https://github.com) to publish our project and its releases.
 
 > You’ll need a personal access token to use Github from the terminal. click [here](https://docs.catalyst.zoho.com/en/tutorials/githubbot/java/generate-personal-access-token/) to learn how to get it if you don’t know how.
 
@@ -175,7 +175,7 @@ zip -r dlmv_installer.zip dlmv.py Makefile install.sh
 
 ### Push your Code
 
-Go on [Github](http://github.com), create a new repository with a name of your choice, then click on the green button on the top-right corner and copy the link shown, then open the terminal and clone the repo:
+Go on [Github](https://github.com), create a new repository with a name of your choice, then click on the green button on the top-right corner and copy the link shown, then open the terminal and clone the repo:
 
 ``` bash
 git clone YOUR_LINK_HERE
