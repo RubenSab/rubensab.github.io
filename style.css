@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&display=swap');
+
+/* === Global color variables === */
+:root {
+  --accent-color: #71C9CE;
+  --background-color: #1e1e1e;
+  --post-background: transparent;
+  --post-hover-background: #222222;
+  --heading-color: #eeeeee;
+  --text-color: #aaaaaa;
+  --post-date-id-color: #666;
+}
+
+/* === General typography and layout === */
+body {
+  font-family: 'DM Mono', monospace;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin-top: 40px;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-weight: 400;
+  margin-bottom: 0;
+  margin-top: 16px;
+}
+
+h1 { font-size: 1.7rem; }
+h2 { font-size: 1.45rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.125rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; }
+
+a {
+  -webkit-tap-highlight-color: transparent;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus, .post:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* === Layout container === */
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* === Header layout === */
+header {
+  background-color: var(--background-color);
+  padding: 0 18px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: var(--accent-color);
+  font-weight: 400;
+  text-align: left;
+}
+
+/* === Social icons layout === */
+.social-icons {
+  margin-top: 5px;
+  margin-right: 2px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  color: var(--heading-color);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-top: 16px;
+}
+
+.social-icon:hover {
+  color: var(--accent-color);
+}
+
+/* === Responsive header for small screens === */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column; /* Stack header elements vertically */
+    align-items: center;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  
+  body {
+    margin-top: 16px;
+  }
+  
+  .post {
+    padding: 10px !important;
+    margin-top: 10px !important;
+  }
+}
+
+/* === Post layout === */
+.post {
+  background-color: var(--post-background);
+  padding: 16px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.post:hover {
+  background-color: var(--post-hover-background);
+  transform: translateY(-2px);
+}
+
+.post a img {
+  vertical-align: bottom;
+  max-height: 250px;
+}
+
+.single-post {
+  margin: 12px;
+}
+
+.single-post .post-header {
+  margin-top: 0;
+}
+
+.single-post img {
+  max-height: 300px;
+}
+
+/* === Post header layout with grid === */
+.post-header {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr auto; /* Title takes available space, ID stays to the right */
+  align-items: end; /* Align ID at the end of the title line */
+}
+
+.post-title {
+  font-size: 1.5rem;
+  color: var(--heading-color);
+  margin: 0;
+}
+
+.post-title a {
+  color: var(--heading-color);
+  transition: color 0.3s ease;
+}
+
+/* === Post metadata === */
+.post-id {
+  font-size: 0.95rem;
+  color: var(--post-date-id-color);
+  white-space: nowrap;
+  align-self: end; /* Align ID at the end of the title line */
+  margin-bottom: 3px;
+}
+
+.post-date {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--post-date-id-color);
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* === Post images === */
+.post img,
+.single-post img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* === Back to home link === */
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+}
