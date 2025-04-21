@@ -37,7 +37,18 @@ def md_to_html(source_file_name):
     thumbnail = metadata["img"]
 
     # Convert markdown content to HTML
-    html_content = markdown.markdown(md_content)
+    html_content = markdown.markdown(
+        md_content,
+        extensions=['fenced_code', 'codehilite'],
+        extension_configs={
+            'codehilite': {
+                'linenums': False,
+                'guess_lang': False,
+                'pygments_style': 'github-dark',
+                'noclasses': False
+            }
+        }
+    )
 
     # Create the single-post HTML
     html_single_post = (
@@ -94,6 +105,7 @@ def add_post(source_file_name):
             f'    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
             f'    <title>{title}</title>\n'
             f'    <link rel="stylesheet" href="../style.css">\n'
+            f'    <link rel="stylesheet" href="../pygments.css">\n'        
             f'</head>\n'
             f'\n'
             f'<body>\n'
@@ -137,8 +149,6 @@ def remove_post(post_id):
     # Write the updated content to index.html
     with open("index.html", "w") as f:
         f.write(new_content)
-
-    print(f"Post #{post_id} removed from index.html")
 
     # Delete the post file from the 'posts' folder
     post_file_path = f"posts/{post_id}.html"
