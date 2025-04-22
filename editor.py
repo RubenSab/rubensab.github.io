@@ -102,7 +102,7 @@ def add_post(source_file_name):
             f'\n'
             f'<head>\n'
             f'    <meta charset="UTF-8">\n'
-            f'    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
+            f'    <meta name="viewport" content="width=device-width, initial-scale=1.00, maximum-scale=2.00, minimum-scale=1.00">\n'
             f'    <title>{title}</title>\n'
             f'    <link rel="stylesheet" href="../style.css">\n'
             f'    <link rel="stylesheet" href="../pygments.css">\n'        
