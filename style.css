@@ -23,12 +23,12 @@ body {
   margin-top: 40px;
 }
 
-p {
+p, ol {
   font-family: var(--text-font);
-  font-size: 1.1em;
+  font-size: 1.1rem !important;
   margin-top: 16px;
   margin-bottom: 16px;
-  line-height: 1.6;
+  line-height: 1.6rem;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
