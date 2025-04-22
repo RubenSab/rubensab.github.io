@@ -22,7 +22,7 @@
     <div class="post-content">
         <p><em>^ generated with rule 102 automaton</em></p>
 <h1>What is a cellular automaton?</h1>
-<p>A cellular automa is a collection of <strong>cells</strong>, usually arranged in a <strong>grid</strong> (2D automata) or a <strong>line</strong> (1D automata), where cells <strong>change state</strong> (0 or 1) all at once, following a simple specified <strong>rule set</strong> based on the state of <strong>neighbouring cells</strong>.</p>
+<p>A cellular automaton is a collection of <strong>cells</strong>, usually arranged in a <strong>grid</strong> (2D automata) or a <strong>line</strong> (1D automata), where cells <strong>change state</strong> (0 or 1) all at once, following a simple specified <strong>rule set</strong> based on the state of <strong>neighbouring cells</strong>.</p>
 <p>A complex <strong>self replicating</strong> system emerges from simple rules.</p>
 <p><img alt="Game Of Life" src="1_imgs/GOL.gif" /></p>
 <p>The concept of <strong>cellular automata</strong> was developed by the mathematicians, physicists and computer scientists <strong>John von Neumann</strong> and <strong>Stanislaw Ulam</strong> in the 1940s while working on the atomic bomb at Los Alamos, then it was expanded further in the 1970s by the work of <strong>John Conway</strong>, who invented the famous <strong>Conway's Game of Life</strong> (see the GIF above) which you can try <a href="https://copy.sh/life/">here</a>, and by <strong>Stephen Wolfram</strong> in the 1980s.</p>
@@ -62,7 +62,7 @@ L C R | C&#39;
 <p>To make a <strong>naive implementation</strong> in our programming language of choice, we could:</p>
 <ol>
 <li><strong>Loop</strong> on every cell of the <strong>current line</strong><ol>
-<li>get its left-right-center configuration and the output mapped to it on out <strong>look-up table</strong>,</li>
+<li>get its left-right-center configuration and the output mapped to it on our <strong>look-up table</strong>,</li>
 <li>insert the new computed state inside of <strong>new line</strong>'s corresponding position.</li>
 </ol>
 </li>
