@@ -2,12 +2,13 @@
 
 /* === Global color variables === */
 :root {
-  --accent-color: #71C9CE;
+  --accent-color: #71c9ce;
   --background-color: #1e1e1e;
   --post-background: transparent;
   --post-hover-background: #222222;
   --heading-color: #eeeeee;
   --text-color: #aaaaaa;
+  --bold-color: #adb3bf;
   --post-date-id-color: #666;
 }
 
@@ -20,11 +21,18 @@ body {
 }
 
 p {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   line-height: 1.6;
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+.single-post b,
+.single-post strong,
+.single-post i,
+.single-post em {
+	color: var(--bold-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,7 +56,8 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  font-weight: bold;
+  
 }
 
 a:focus, .post:focus {
@@ -56,7 +65,7 @@ a:focus, .post:focus {
   box-shadow: none;
 }
 
-/* Make code blocks have a transparent background */
+/* === Code blocks === */
 .codehilite, .codehilite pre {
   background: transparent !important;
 }
@@ -64,7 +73,7 @@ a:focus, .post:focus {
 .codehilite code {
   font-family: "DM Mono", monospace;
   font-size: 0.95em;
-  line-height: 150%;
+  line-height: 160%;
 }
 
 /* === Layout container === */
@@ -145,11 +154,6 @@ header h1 {
   transform: translateY(-2px);
 }
 
-.post a img {
-  vertical-align: bottom;
-  max-height: 250px;
-}
-
 .single-post {
   margin: 12px;
 }
@@ -158,9 +162,6 @@ header h1 {
   margin-top: 0;
 }
 
-.single-post img {
-  max-height: 300px;
-}
 
 /* === Post header layout with grid === */
 .post-header {
@@ -179,6 +180,11 @@ header h1 {
 .post-title a {
   color: var(--heading-color);
   transition: color 0.3s ease;
+  font-weight: normal;
+}
+
+.post-title a:hover {
+  text-decoration: underline;
 }
 
 /* === Post metadata === */
@@ -199,13 +205,22 @@ header h1 {
 }
 
 /* === Post images === */
-.post img,
+.post img {
+  display: block;
+  width: 100%;
+  vertical-align: top;
+  max-height: 250px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;	
+  object-position: top;
+}
+
 .single-post img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 8px;
-  object-fit: cover;
 }
 
 /* === Back to home link === */

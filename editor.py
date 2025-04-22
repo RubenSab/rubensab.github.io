@@ -54,7 +54,7 @@ def md_to_html(source_file_name):
     html_single_post = (
         f'<article class="single-post">\n'
         f'    <a href="../index.html" class="back-link">&lt;&lt; Home</a>\n'
-        f'    <img src="../imgs/{thumbnail}" alt="Thumbnail">\n'
+        f'    <img src="../thumbnails/{thumbnail}" alt="Thumbnail">\n'
         f'    <div class="post-header">\n'
         f'        <h1>{title}</h1>\n'
         f'        <span class="post-id">#{post_id}</span>\n'
@@ -72,7 +72,7 @@ def md_to_html(source_file_name):
     html_post_preview = (
         f'<div class="post">\n'
         f'    <a href="posts/{post_id}.html">\n'
-        f'        <img alt="thumbnail of post {post_id}" src="imgs/{thumbnail}">\n'
+        f'        <img alt="thumbnail of post {post_id}" src="thumbnails/{thumbnail}">\n'
         f'    </a>\n'
         f'    <div class="post-header">\n'
         f'        <h1 class="post-title">\n'
