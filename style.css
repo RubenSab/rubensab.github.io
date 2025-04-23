@@ -91,7 +91,7 @@ a:focus, .post:focus {
 /* === Header layout === */
 header {
   background-color: var(--background-color);
-  padding: 0 18px;
+  padding: 0 15px;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
@@ -167,14 +167,9 @@ header h1 {
   margin: 12px;
 }
 
-.single-post .post-header {
-  margin-top: 0;
-}
-
-
 /* === Post header layout with grid === */
 .post-header {
-  margin-top: 14px;
+  margin-top: 12px;
   display: grid;
   grid-template-columns: 1fr auto; /* Title takes available space, ID stays to the right */
   align-items: end; /* Align ID at the end of the title line */
@@ -183,7 +178,7 @@ header h1 {
 .post-title {
   font-size: 1.5rem;
   color: var(--heading-color);
-  margin: 0;
+  margin-top: 5px;
 }
 
 .post-title a {
