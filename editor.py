@@ -5,6 +5,23 @@ import yaml
 import re
 import textwrap
 
+HELP = """
+Usage:
+    editor.py add <title>
+    editor.py remove <post_id>
+
+Commands:
+    add, a       Add a new .md post using the given title.
+    remove, r    Remove an existing post by its ID.
+
+Examples:
+    python editor.py add "new_post.md"
+    python editor.py remove 123
+
+Errors:
+    - Raises ValueError if arguments are missing or invalid.
+"""
+
 # Function to convert .md source file into HTML content for single post and preview
 def md_to_html(source_file_name):
 
@@ -160,12 +177,16 @@ def remove_post(post_id):
 
 
 def main():
+    if len(sys.argv) < 2 or sys.argv[1] in {'-h', '--help'}:
+        print(HELP)
+        return
+
     try:
         match sys.argv[1]:
             case 'a' | 'add':
-                add_post(sys.argv[2]) # add post from title
+                add_post(sys.argv[2])  # add post from title
             case 'r' | 'remove':
-                remove_post(sys.argv[2]) # remove post from ID
+                remove_post(sys.argv[2])  # remove post from ID
             case _:
                 raise ValueError("Invalid action.")
     except IndexError:
@@ -173,3 +194,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
