@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.00, maximum-scale=2.00, minimum-scale=1.00">
-    <title>Is chess fair? no! Let's use data science choose two pawns to kill to improve it</title>
+    <title>Chess is unfair. Let's remove two pawns with data science to fix it.</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../pygments.css">
 </head>
@@ -15,7 +15,7 @@
     <a href="../index.html" class="back-link">&lt;&lt; Home</a>
     <img src="../thumbnails/chess_matrix.png" alt="Thumbnail">
     <div class="post-header">
-        <h1>Is chess fair? no! Let's use data science choose two pawns to kill to improve it</h1>
+        <h1>Chess is unfair. Let's remove two pawns with data science to fix it.</h1>
         <span class="post-id">#2</span>
     </div>
     <span class="post-date">2025-06-06</span>
@@ -28,13 +28,13 @@
 <blockquote>
 <p>I started to search for the <strong>fairest</strong> starting position one could get by removing only a pawn from each side.</p>
 </blockquote>
-<p>Pierre Menard only said <em>"</em><em>one of the rooks' pawns</em><em>"</em>, so we can interpret it like <strong>this</strong>, a stupid version where white can start by capturing black's rook right off and start winning:</p>
+<p>Pierre Menard only said <em>"</em><em>one of the rooks' pawns</em><em>"</em>, so we can interpret it like <strong>this</strong>, a stupid setup where white can start by capturing black's rook right off and start winning:</p>
 <p><img alt="stupid setup" src="2_imgs/Pasted%20image%2020250606214503.png" /></p>
 <p>or (more reasonably) we could see it like <strong>this</strong>:</p>
 <p><img alt="diagonal root setup" src="2_imgs/Pasted%20image%2020250606215043.png" /></p>
 <p>This is not as absurd as before and actually it could make for a nice asymmetric and <strong>balanced</strong> gameplay!</p>
-<h1>Eureka moment 💡: in search of a fairer starting position</h1>
-<p>What if, instead of comparing only "Menard's" setup to the default starting position, we consider <strong><em>every</em></strong> possible starting position from which we <strong>remove</strong> a white and a black <strong>pawn</strong>, and we find a way to <strong>measure</strong> it's <strong>fairness</strong> compared to the default starting position?</p>
+<h1>Eureka moment 💡: in search of chess’s fairest start</h1>
+<p>What if, instead of comparing only "Menard's" setup to the default starting position, we consider <strong><em>every</em></strong> possible starting position in which we remove a pawn for each side, and we find a way to <strong>measure</strong> it's <strong>fairness</strong> compared to the default starting position?</p>
 <h2>What does <em>every position</em> mean?</h2>
 <p>Let's say we removed the <strong>sixth</strong> pawn from <strong>white</strong>'s row and the <strong>fourth</strong> one (by our perspective) from <strong>black</strong>'s:</p>
 <p><img alt="white sixth and black fourth pawns removed" src="2_imgs/Pasted%20image%2020250606220626.png" /></p>
@@ -53,8 +53,11 @@
 <p>After the position is loaded, we can make it calculate the advantage with a simple function: we'll get the result in <em>centipawns</em>.</p>
 <p><strong>Centipawns</strong> are just "cents of a pawn", so if the position has an <strong>evaluation</strong> of -20, it means as if black had a <em>fifth of a pawn</em> of advantage (20/100 pawns) more than white;</p>
 <p>the sign tell us who's winning (+ for white and -for black).</p>
+<blockquote>
+<p>Fun fact: as is stated in the title, chess default starting setup is objectively unfair, because white has around +20 centipawns of advantage.</p>
+</blockquote>
 <p>We can also <strong>normalize</strong> the <strong>evaluation in centipawns</strong> with the formula of the <strong>curve below</strong> to get the <strong>draw probability</strong> (assuming a "perfect" play), an effective measure of a position's fairness or <strong>balance</strong>.</p>
-<p><em>draw probability % = 100*2^(-centipawns/100)^2</em></p>
+<p><em>Draw probability % = 100 × 2^(-(centipawns/100)²)</em></p>
 <p><img alt="gaussian-like formula for draw probability" src="2_imgs/Pasted%20image%2020250606224822.png" /></p>
 <h2>Visualizing every combination's draw probability</h2>
 <p>After writing an running the python script for days, I was able to get a general overview of the draw probabilities according to which pawns were removed.</p>
@@ -73,7 +76,7 @@
 <p><img alt="absurd evaluation log from terminal" src="2_imgs/Screenshot%20From%202025-06-06%2019-12-21.png" /></p>
 <p><strong>The winner is clear</strong>, according to <strong>Stockfish</strong>, this is the most balanced starting position you could get by removing a pawn for side and playing without blunders:</p>
 <p><img alt="7 5 clear verdict" src="2_imgs/Pasted%20image%2020250606232721.png" /></p>
-<p>It's very interesting to guess why Stockfish chose this setup, but we will only know if we play it!</p>
+<p>Is this position the fairest of them all? Only one way to find out: <strong>play it.</strong></p>
     </div>
 </article>
 
