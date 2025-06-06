@@ -8,15 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f14d1d88797b6119",
+            "id": "938c7d1787aeacaf",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "posts/1_imgs/GOL.gif"
+                "file": "source/2.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "GOL"
+              "icon": "lucide-file",
+              "title": "2"
             }
           }
         ]
@@ -76,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 340.5094871520996
   },
   "right": {
     "id": "815e6a444bd6afef",
@@ -166,21 +168,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f14d1d88797b6119",
+  "active": "938c7d1787aeacaf",
   "lastOpenFiles": [
+    "CNAME",
+    "thumbnails/chess_matrix.tmp.png",
+    "posts/2.html",
+    "source/1.md",
+    "source/2.md",
+    "thumbnails/automata.png",
+    "thumbnails/chess_matrix.png",
+    "posts/2_imgs/draw_probabilities_at_depth_30.png",
+    "Pasted image 20250606214304.png",
+    "posts/2_imgs/single_position_hist_(7,4)_depth_40.png",
+    "posts/2_imgs/Screenshot From 2025-06-06 19-12-21.png",
+    "Pasted image 20250606233045.png",
+    "posts/2_imgs",
+    "todo/Posts to write.md",
+    "posts/2_imgs/Pasted image 20250606232721.png",
+    "Pasted image 20250606232536.png",
+    "todo",
     "posts/1.html",
     "source/todo.md",
-    "posts/1_imgs/GOL.gif",
-    "source/1.md",
-    "thumbnails/automata.png",
-    "thumbnails/tmpj_jktwd8.PNG",
-    "tmpj_jktwd8.PNG",
-    "posts/1_imgs/rule102.png",
-    "posts/1_imgs/rule102.svg",
-    "posts/1_imgs/rule102.png",
-    "output-onlinepngtools.png",
-    "thumbnails/ezgif-387deb6ba3ac7a.gif",
-    "thumbnails/test.png",
     "posts/1_imgs"
   ]
 }
