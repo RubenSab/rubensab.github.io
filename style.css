@@ -33,10 +33,7 @@ p, ol {
   overflow-wrap: break-word;
 }
 
-.single-post b,
-.single-post strong,
-.single-post i,
-.single-post em {
+b, strong, i, em {
 	color: var(--bold-color);
 }
 
@@ -113,11 +110,14 @@ header h1 {
 }
 
 .social-icon {
-  color: var(--heading-color);
   font-size: 1.2rem;
   text-decoration: none;
   transition: color 0.3s ease;
   margin-top: 16px;
+}
+
+.social-icon i {
+  color: var(--heading-color);
 }
 
 .social-icon:hover {

@@ -1,6 +1,7 @@
-1. [x] Is chess fair? no! Let's use data science choose two pawns to kill to improve it
-2. [ ] 3D printing solutions of differential equations
-3. [ ] Simulating a small computer and creating a new programming language from scratch with Python
+1. [x] Cellular automata optimization
+2. [x] Is chess fair? no! Let's use data science choose two pawns to kill to improve it
+3. [ ] 3D printing solutions of differential equations
+4. [ ] Simulating a small computer and creating a new programming language from scratch with Python
 
 While reading a short story by the argentine writer Jorge Luis Borges titled "**Pierre Menard, Author of Don Quixote**", about a *fictional* scholar and his works, I stumbled upon something absurd the main character wrote about chess:
 
