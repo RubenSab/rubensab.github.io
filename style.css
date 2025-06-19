@@ -12,20 +12,20 @@
   --heading-color: #eeeeee;
   --text-color: #aaaaaa;
   --bold-color: #adb3bf;
-  --post-date-id-color: #666;
+  --post-date-id-color: #777;
 }
 
 /* === General typography and layout === */
 body {
   font-family: var(--mono-font);
   background-color: var(--background-color);
-  color: var(--text-color);
   margin-top: 40px;
+  color: var(--text-color);
 }
 
 p, ol {
   font-family: var(--text-font);
-  font-size: 1.1rem !important;
+  font-size: 1.2rem !important;
   margin-top: 16px;
   margin-bottom: 16px;
   line-height: 1.6rem;
@@ -33,8 +33,8 @@ p, ol {
   overflow-wrap: break-word;
 }
 
-b, strong, i, em {
-	color: var(--bold-color);
+b, strong, p b, p strong {
+	color: var(--bold-color) !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
