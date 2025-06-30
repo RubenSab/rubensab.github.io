@@ -25,7 +25,7 @@ body {
 
 p, ol {
   font-family: var(--text-font);
-  font-size: 1.2rem !important;
+  font-size: 1.1rem !important;
   margin-top: 16px;
   margin-bottom: 16px;
   line-height: 1.6rem;
@@ -48,12 +48,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 16px;
 }
 
-h1 { font-size: 1.7rem; }
-h2 { font-size: 1.45rem; }
-h3 { font-size: 1.25rem; }
-h4 { font-size: 1.125rem; }
-h5 { font-size: 1rem; }
-h6 { font-size: 0.875rem; }
+h1 { font-size: 1.5rem; }
+h2 { font-size: 1.35rem; }
+h3 { font-size: 1.15rem; }
+h4 { font-size: 1.025rem; }
+h5 { font-size: 0.9rem; }
+h6 { font-size: 0.775rem; }
 
 a {
   -webkit-tap-highlight-color: transparent;
@@ -139,10 +139,6 @@ header h1 {
   
   body {
     margin-top: 16px;
-  }
-
-  p {
-  	font-size: 1em;
   }
   
   .post {
