@@ -37,6 +37,10 @@ b, strong, p b, p strong {
 	color: var(--bold-color) !important;
 }
 
+.single-post p {
+  margin-bottom: 30px !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
   font-weight: 400;
@@ -212,9 +216,7 @@ header h1 {
 .post img {
   display: block;
   width: 100%;
-  vertical-align: top;
-  max-height: 250px;
-  height: auto;
+  aspect-ratio: 21 / 9;
   border-radius: 8px;
   object-fit: cover;	
   object-position: top;

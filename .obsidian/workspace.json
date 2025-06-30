@@ -8,13 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d21158fadcab081d",
+            "id": "8e3969a854a5854d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "source/3.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "3"
             }
           }
         ]
@@ -74,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 340.5094871520996
+    "width": 340.5094871520996,
+    "collapsed": true
   },
   "right": {
     "id": "815e6a444bd6afef",
@@ -164,23 +169,31 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d21158fadcab081d",
+  "active": "8e3969a854a5854d",
   "lastOpenFiles": [
+    "posts/3.html",
+    "source/3.md",
+    "source/infrared_photography_guide.md",
+    "source/ir_photography_guide.md",
+    "infrared_photography_guide.md",
+    "white.md",
+    "posts/3_imgs/vesuvius.jpg.crswap",
+    "posts/3_imgs/vesuvius.jpg",
+    "posts/3_imgs/trees.jpg",
+    "posts/3_imgs/dune.jpg",
     "source/1.md",
     "source/2.md",
-    "posts/1_imgs/GOL.gif",
-    "posts/1_imgs/rule102.png",
+    "posts/3_imgs/cmos.png",
+    "posts/3_imgs/spectrum.jpg",
+    "posts/3_imgs/fullspectrum.jpg",
+    "posts/3_imgs/infrared.jpg",
     "thumbnails/automata.png",
-    "thumbnails/chess_matrix.png",
+    "thumbnails/ir_shore.jpeg",
+    "posts/3_imgs/normal.jpg",
+    "posts/3_imgs",
     "todo/Posts to write.md",
-    "Pasted image 20250606233045.png",
-    "Pasted image 20250606232536.png",
-    "Pasted image 20250606214304.png",
     "posts/2.html",
     "CNAME",
-    "thumbnails/chess_matrix.tmp.png",
-    "posts/2_imgs/draw_probabilities_at_depth_30.png",
-    "posts/2_imgs/single_position_hist_(7,4)_depth_40.png",
     "posts/2_imgs",
     "todo",
     "posts/1.html",
