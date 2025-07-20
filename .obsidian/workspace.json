@@ -11,14 +11,12 @@
             "id": "8e3969a854a5854d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "source/3.md",
-                "mode": "source",
-                "source": false
+                "file": "thumbnails/ir_shore.jpeg"
               },
-              "icon": "lucide-file",
-              "title": "3"
+              "icon": "lucide-image",
+              "title": "ir_shore"
             }
           }
         ]
@@ -78,8 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 340.5094871520996,
-    "collapsed": true
+    "width": 340.5094871520996
   },
   "right": {
     "id": "815e6a444bd6afef",
@@ -171,8 +168,11 @@
   },
   "active": "8e3969a854a5854d",
   "lastOpenFiles": [
-    "posts/3.html",
+    "thumbnails/ir_reef.jpg",
+    "thumbnails/ir_shore.jpg",
+    "todo/Posts to write.md",
     "source/3.md",
+    "posts/3.html",
     "source/infrared_photography_guide.md",
     "source/ir_photography_guide.md",
     "infrared_photography_guide.md",
@@ -189,9 +189,7 @@
     "posts/3_imgs/infrared.jpg",
     "thumbnails/automata.png",
     "thumbnails/ir_shore.jpeg",
-    "posts/3_imgs/normal.jpg",
     "posts/3_imgs",
-    "todo/Posts to write.md",
     "posts/2.html",
     "CNAME",
     "posts/2_imgs",
