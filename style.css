@@ -15,17 +15,24 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Helvetica Neue Medium';
+  src: url('fonts/helvetica-neue-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
 /* === Global variables === */
 :root {
   --text-font: "Helvetica Neue Roman";
-  --mono-font: "DM Mono";
+  --mono-font: "Space Grotesk";
   --accent-color: #71c9ce;
   --background-color: #101010;
   --post-background: transparent;
   --post-hover-background: #222222;
   --heading-color: #eeeeee;
-  --text-color: #d7d7d7;
-  --bold-color: #adb3bf;
+  --text-color: #cacaca;
+  --bold-color: #9fcccf;
   --post-date-id-color: #777;
 }
 
@@ -47,8 +54,12 @@ p, ol {
   overflow-wrap: break-word;
 }
 
+b, strong {
+  font-weight: 600;
+}
+
 b, strong, p b, p strong {
-	color: var(--bold-color) !important;
+  color: var(--bold-color) !important;
 }
 
 .single-post p {
@@ -121,7 +132,7 @@ header h1 {
 
 /* === Social icons layout === */
 .social-icons {
-  margin-top: 5px;
+  margin-bottom: 0px;
   margin-right: 2px;
   display: flex;
   gap: 15px;
@@ -230,7 +241,7 @@ header h1 {
   border-radius: 6px;
   object-fit: cover;	
   object-position: top;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .single-post img {
