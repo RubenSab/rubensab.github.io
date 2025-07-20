@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&display=swap');
 
 @font-face {
   font-family: 'Helvetica Neue Roman';
@@ -24,8 +24,10 @@
 
 /* === Global variables === */
 :root {
+  --title-font: "DM Mono";
+  --heading-font: "Space Grotesk";
   --text-font: "Helvetica Neue Roman";
-  --mono-font: "Space Grotesk";
+  --mono-font: "DM Mono";
   --accent-color: #71c9ce;
   --background-color: #101010;
   --post-background: transparent;
@@ -44,7 +46,7 @@ body {
   color: var(--text-color);
 }
 
-p, ol {
+p, ol, em {
   font-family: var(--text-font);
   font-size: 1.1rem !important;
   margin-top: 16px;
@@ -68,6 +70,7 @@ b, strong, p b, p strong {
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
+  font-family: var(--heading-font) !important;
   font-weight: 400;
   margin-bottom: 0;
   margin-top: 16px;
@@ -83,7 +86,7 @@ h6 { font-size: 0.775rem; }
 a {
   -webkit-tap-highlight-color: transparent;
   color: var(--accent-color);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -125,6 +128,7 @@ header {
 }
 
 header h1 {
+  font-family: var(--title-font) !important;
   color: var(--accent-color);
   font-weight: 400;
   text-align: left;
@@ -210,6 +214,7 @@ header h1 {
   color: var(--heading-color);
   transition: color 0.3s ease;
   font-weight: normal;
+  text-decoration: none;
 }
 
 .post-title a:hover {
