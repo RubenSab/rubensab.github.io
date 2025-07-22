@@ -185,13 +185,13 @@ header h1 {
   }
 
   .post {
+    padding: 12px !important;
     margin-top: 0px !important;
-    padding: 12px;
     display: block;
   }
 
   hr {
-    width: calc(100% - 12+16px);
+    width: calc(100% - 26px);
   }
 
   .intro {
