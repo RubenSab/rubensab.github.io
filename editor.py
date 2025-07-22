@@ -73,6 +73,7 @@ def md_to_html(source_file_name, is_gallery=False):
         }
     )
 
+
     # Determine paths and class names based on whether it's a gallery item
     if is_gallery:
         back_link = '../gallery.html'
