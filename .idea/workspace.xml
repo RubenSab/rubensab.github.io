@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a1b6827-ae4d-48c9-b29b-43bea4d0ad85" name="Changes" comment="changed font">
-      <change afterPath="$PROJECT_DIR$/contacts.html" afterDir="false" />
+    <list default="true" id="0a1b6827-ae4d-48c9-b29b-43bea4d0ad85" name="Changes" comment="added Gallery">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.obsidian/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/.obsidian/workspace.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/editor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/gallery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gallery/3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gallery_source/3.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +41,7 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.editor.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -78,11 +81,20 @@
       <option name="project" value="LOCAL" />
       <updated>1753034868809</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added Gallery">
+      <option name="closed" value="true" />
+      <created>1753188248808</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1753188248808</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed font" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed font" />
+    <MESSAGE value="added Gallery" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Gallery" />
   </component>
 </project>

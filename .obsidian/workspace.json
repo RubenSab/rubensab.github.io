@@ -11,12 +11,14 @@
             "id": "8e3969a854a5854d",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "thumbnails/ir_shore.jpeg"
+                "file": "gallery_source/1.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "ir_shore"
+              "icon": "lucide-file",
+              "title": "1"
             }
           }
         ]
@@ -168,8 +170,24 @@
   },
   "active": "8e3969a854a5854d",
   "lastOpenFiles": [
-    "thumbnails/ir_reef.jpg",
-    "thumbnails/ir_shore.jpg",
+    "gallery/1.html",
+    "style.css~",
+    "gallery/1.html~",
+    "editor.py~",
+    "gallery/1_imgs.zip",
+    "thumbnails/ir_abruzzo.JPG",
+    "thumbnails/ir_abbruzzo.JPG",
+    "thumbnails/P1150142_hue120.JPG",
+    "thumbnails/ir_abruzzo.png",
+    "thumbnails/automata.png",
+    "thumbnails/1000028888.png",
+    "gallery_source/1.md",
+    "gallery/1_imgs/P1150169_hue120.JPG",
+    "gallery/1_imgs/P1150168_hue120.JPG",
+    "gallery/1_imgs/P1150167_hue120.JPG",
+    "gallery/1_imgs/P1150165_hue120.JPG",
+    "gallery/1_imgs/IR snapseed",
+    "gallery/1_imgs",
     "todo/Posts to write.md",
     "source/3.md",
     "posts/3.html",
@@ -178,24 +196,10 @@
     "infrared_photography_guide.md",
     "white.md",
     "posts/3_imgs/vesuvius.jpg.crswap",
-    "posts/3_imgs/vesuvius.jpg",
-    "posts/3_imgs/trees.jpg",
-    "posts/3_imgs/dune.jpg",
     "source/1.md",
     "source/2.md",
-    "posts/3_imgs/cmos.png",
-    "posts/3_imgs/spectrum.jpg",
-    "posts/3_imgs/fullspectrum.jpg",
-    "posts/3_imgs/infrared.jpg",
-    "thumbnails/automata.png",
-    "thumbnails/ir_shore.jpeg",
     "posts/3_imgs",
     "posts/2.html",
-    "CNAME",
-    "posts/2_imgs",
-    "todo",
-    "posts/1.html",
-    "source/todo.md",
-    "posts/1_imgs"
+    "source/todo.md"
   ]
 }

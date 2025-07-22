@@ -77,7 +77,7 @@ def md_to_html(source_file_name, is_gallery=False):
     if is_gallery:
         back_link = '../gallery.html'
         back_text = '&lt;&lt; Gallery'
-        article_class = 'single-gallery-item'
+        article_class = 'single-post'
         folder_name = 'gallery'
         index_file = 'gallery.html'
     else:
