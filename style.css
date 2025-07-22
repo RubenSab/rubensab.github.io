@@ -57,6 +57,11 @@ p, ol, em {
   overflow-wrap: break-word;
 }
 
+li {
+  font-family: var(--text-font);
+  font-size: 1.1rem !important;
+}
+
 b, strong {
   font-weight: 600;
 }
@@ -119,6 +124,13 @@ a:focus, .post:focus {
   margin: auto;
 }
 
+hr {
+    width: calc(100% - 34px);
+    border: 0.1px solid #333; /* Optional: customize the line */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 /* === Header layout === */
 header {
   background-color: var(--background-color);
@@ -173,8 +185,14 @@ header h1 {
   }
   
   .post {
-    padding: 10px !important;
-    margin-top: 30px !important;
+    margin-top: 0px !important;
+    padding: 12px;
+    display: block;
+  }
+
+  .intro {
+    padding-right: 12px !important;
+    padding-left: 12px !important;
     display: block;
   }
 }
@@ -185,7 +203,6 @@ header h1 {
   padding: 16px;
   border-radius: 12px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 25px;
   width: 100%;
   box-sizing: border-box;
   display: block;
