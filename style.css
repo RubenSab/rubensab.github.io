@@ -228,6 +228,10 @@ header h1 {
   margin: 12px;
 }
 
+.single-post .post-header h1 {
+  margin-top: 10px !important;
+}
+
 /* === Post header layout with grid === */
 .post-header {
   margin-top: 12px;
