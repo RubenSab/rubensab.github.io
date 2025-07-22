@@ -3,7 +3,6 @@ import sys
 import markdown
 import yaml
 import re
-import textwrap
 
 HELP = """
 Usage:
@@ -100,6 +99,7 @@ def md_to_html(source_file_name, is_gallery=False):
         f'    <div class="post-content">\n'
         f'        {html_content}\n'
         f'    </div>\n'
+        f'    <hr>\n'
         f'</article>\n'
     )
 
@@ -122,6 +122,7 @@ def md_to_html(source_file_name, is_gallery=False):
         f'    </p>\n'
         f'    <span class="post-date">{date}</span>\n'
         f'</div>\n'
+        f'<hr>\n'
     )
 
     return html_single_item, html_item_preview, title, date, post_id, thumbnail

@@ -183,11 +183,15 @@ header h1 {
   body {
     margin-top: 16px;
   }
-  
+
   .post {
     margin-top: 0px !important;
     padding: 12px;
     display: block;
+  }
+
+  hr {
+    width: calc(100% - 12+16px);
   }
 
   .intro {
