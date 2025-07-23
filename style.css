@@ -193,7 +193,7 @@ header h1 {
   }
 
   hr {
-    width: calc(100% - 26px);
+    width: calc(100% - 24px);
     border-top: 2px solid #777;
   }
 
