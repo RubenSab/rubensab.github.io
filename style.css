@@ -125,7 +125,7 @@ a:focus, .post:focus {
 }
 
 hr {
-    width: calc(100% - 34px);
+    width: calc(100% - 32px);
     border: none;
     border-top: 0.5px solid #777; /* Optional: customize the line */
     height: 0
