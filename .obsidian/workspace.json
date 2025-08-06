@@ -13,12 +13,22 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gallery_source/1.md",
+                "file": "source/4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1"
+              "title": "4"
+            }
+          },
+          {
+            "id": "a1755775d221559c",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -78,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 340.5094871520996
+    "width": 257.5094871520996
   },
   "right": {
     "id": "815e6a444bd6afef",
@@ -170,6 +180,21 @@
   },
   "active": "8e3969a854a5854d",
   "lastOpenFiles": [
+    "posts/4.html",
+    "thumbnails/dice.jpg",
+    "thumbnails/dice.png",
+    "source/3.md",
+    "source/4.md",
+    "thumbnails/thumbnail.png",
+    "thumbnail.png",
+    "posts/4_imgs/thumbnail.png",
+    "todo/Posts to write.md",
+    "posts/4_imgs/retries_histogram.png",
+    "source/2.md",
+    "posts/4_imgs/sum_histogram.png",
+    "source/1.md",
+    "posts/4_imgs",
+    "gallery_source/1.md",
     "gallery/1.html",
     "style.css~",
     "gallery/1.html~",
@@ -178,28 +203,13 @@
     "thumbnails/ir_abruzzo.JPG",
     "thumbnails/ir_abbruzzo.JPG",
     "thumbnails/P1150142_hue120.JPG",
-    "thumbnails/ir_abruzzo.png",
-    "thumbnails/automata.png",
-    "thumbnails/1000028888.png",
-    "gallery_source/1.md",
-    "gallery/1_imgs/P1150169_hue120.JPG",
-    "gallery/1_imgs/P1150168_hue120.JPG",
-    "gallery/1_imgs/P1150167_hue120.JPG",
-    "gallery/1_imgs/P1150165_hue120.JPG",
     "gallery/1_imgs/IR snapseed",
     "gallery/1_imgs",
-    "todo/Posts to write.md",
-    "source/3.md",
     "posts/3.html",
     "source/infrared_photography_guide.md",
     "source/ir_photography_guide.md",
     "infrared_photography_guide.md",
     "white.md",
-    "posts/3_imgs/vesuvius.jpg.crswap",
-    "source/1.md",
-    "source/2.md",
-    "posts/3_imgs",
-    "posts/2.html",
     "source/todo.md"
   ]
 }

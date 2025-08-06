@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.00, maximum-scale=2.00, minimum-scale=1.00">
+    <title>Simulating any dice with coin flips (random number generation)</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../pygments.css">
+</head>
+
+<body>
+    <div class="container">
+        <article class="single-post">
+    <a href="../index.html" class="back-link">&lt;&lt; Home</a>
+    <img src="../thumbnails/dice.jpg" alt="Thumbnail">
+    <div class="post-header">
+        <h1>Simulating any dice with coin flips (random number generation)</h1>
+        <span class="post-id">#4</span>
+    </div>
+    <span class="post-date">2025-08-06</span>
+    <div class="post-content">
+        <p>Some times ago, while designing a custom <a href="https://github.com/RubenSab/Zedecim-ISA-emulator">CPU emulator</a>, I stumbled into a math problem: I needed to pick <strong>random whole numbers</strong> in <strong>any given range</strong> using only a (boolean) value that can casually become 0 or 1 if asked.</p>
+<p>Think of this random, two-sided value as a <strong>coin</strong> that can be tossed on its head (1) or tail (0), and imagine ranges from 0 to n as an n+1 sided <strong>dice</strong>.</p>
+<p>This simplification works because extracting a casual number from 20 to 25 can be thought as extracting it from 0 to 5 and adding a fixed offset, like 20 in this case.</p>
+<h1>First attempt, coin tosses as increments</h1>
+<p>Let's try to simulate a classic <strong>six sided dice</strong>. Could we toss <strong>5 coins</strong> and take the <strong>number of heads +1</strong> to get numbers from 1 to 6?</p>
+<p>I tested this approach with one million "dice" made like this and this is the result:</p>
+<p><img alt="uneven distribution" src="4_imgs/sum_histogram.png" /></p>
+<p>Clearly the <strong>distribution</strong> of outcomes is <strong>uneven</strong> (and it can be proven to be <em>binomial</em>).
+We should have expected this because if we toss 5 coins, according to the rule we chose, there happens to be:</p>
+<ul>
+<li>only one way to get <strong>1</strong> (all heads),</li>
+<li>5 ways to get <strong>2</strong> (every combination with 1 head and 4 tails),</li>
+<li>10 ways to get <strong>3</strong> (every combination with 2 heads and 3 tails),</li>
+<li>10 ways to get <strong>4</strong> (every combination with 3 heads and 2 tails),</li>
+<li>5 ways to get <strong>5</strong> (every combination with 4 head and 1 tails),</li>
+<li>only one way to get <strong>6</strong> (all tails).</li>
+</ul>
+<h1>Another approach, coin tosses as choices</h1>
+<p>If a coin toss is a <strong>casual fair choice between heads or tails</strong> (2 possible states), how can we extend this perfect fairness to more possible states, so more possible <strong>numbers</strong>?</p>
+<p>Suppose we need to pick a number between 0 and 7 (8 sided dice).
+The idea is simple, we can <strong>chain choices</strong> like this:</p>
+<div class="codehilite"><pre><span></span><code>       1°       first toss, we choose either [0,1,2,3] or [4,5,6,7] 
+      / \
+     /   \
+    /     \
+   2°      2°   second toss, we can choose [0,1] or [2,3], [4, 5] or [6, 7]  
+  / \     / \
+ 3°  3°  3°  3° third toss, we choose 0 or 1, 2 or 3, 4 or 5, 6 or 7
+/ \ / \ / \ / \
+0 1 2 3 4 5 6 7 (final states)
+</code></pre></div>
+
+<p>This is a <strong>binary tree</strong>, because we start from the initial range, then we can <strong>branch left or right</strong> at every step in our path, finally reaching a number.</p>
+<p>A <strong>path in a binary tree is equivalent to a number</strong> written in binary, because 0 can be thought as <em>right</em> and 1 as <em>left</em>, so we can <strong>treat coin tosses as binary digits</strong> to get a random number.</p>
+<p>With this very efficient process we <strong>halve the number of choices left to make</strong> every time we make one (<strong>logarithmic growth</strong> of choices as the number of final states grows).</p>
+<h2>There's a problem</h2>
+<p>As it is, we can only have dices whose number of faces is a <strong>power of two</strong>.</p>
+<p>For example, to simulate a 6 sided dice, we can <strong>toss 3 coins</strong> like before, as 2^3 (8) is the smallest power of two larger than 6, and <strong>repeat</strong> if the result is larger than 5.</p>
+<p>There's <strong>no way around it</strong> without increasing the amount of coins used or having a biased distribution.</p>
+<p>In the worst case, the number of <strong>dice rolls rejected</strong> tends to <strong>50%</strong>.</p>
+<p><img alt="retries histogram" src="4_imgs/retries_histogram.png" /></p>
+<p>This isn’t as bad as it looked on paper: in a million dice rolls, <strong>99%</strong> of rolls produced a valid number after <strong>6 retries or fewer</strong>, <strong>90% within 3 retries</strong>, and <strong>50% after just 1 retry</strong>.</p>
+<p>This shows that the method is not only <strong>elegant</strong> and <strong>simple</strong>, but also surprisingly <strong>efficient</strong>.</p>
+    </div>
+</article>
+
+    </div>
+</body>
+</html>

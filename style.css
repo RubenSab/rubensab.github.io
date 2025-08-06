@@ -47,19 +47,23 @@ body {
   color: var(--text-color);
 }
 
-p, ol, em {
+p, ol, em, li {
   font-family: var(--text-font);
   font-size: 1.1rem !important;
   margin-top: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   line-height: 1.6rem;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
 li {
-  font-family: var(--text-font);
-  font-size: 1.1rem !important;
+	margin-top: 0 !important;
+	margin-bottom: 4px !important;
+}
+
+ul {
+	margin: 0;
 }
 
 b, strong {
@@ -70,16 +74,12 @@ b, strong, p b, p strong {
   color: var(--bold-color) !important;
 }
 
-.single-post p {
-  margin-bottom: 30px !important;
-}
-
 h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
   font-family: var(--heading-font) !important;
   font-weight: 400;
-  margin-bottom: 0;
-  margin-top: 16px;
+  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 h1 { font-size: 1.5rem; }
@@ -128,9 +128,9 @@ hr {
     width: calc(100% - 32px);
     border: none;
     border-top: 0.5px solid #777; /* Optional: customize the line */
-    height: 0
-    margin-top: 10px;
-    margin-bottom: 10px;
+    height: 0;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
 }
 
 /* === Header layout === */
@@ -200,6 +200,7 @@ header h1 {
   .intro {
     padding-right: 12px !important;
     padding-left: 12px !important;
+    padding-top: 0px !important;
     display: block;
   }
 }
@@ -221,14 +222,21 @@ header h1 {
 }
 
 .intro {
-  padding: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
   padding-bottom: 0px;
+  padding-top: 0px;
   width: 100%;
   box-sizing: border-box;
 }
 
 .single-post {
   margin: 12px;
+}
+
+
+.post-header h1 {
+  margin-bottom: 0 !important;
 }
 
 .single-post .post-header h1 {

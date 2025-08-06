@@ -99,7 +99,6 @@ def md_to_html(source_file_name, is_gallery=False):
         f'    <div class="post-content">\n'
         f'        {html_content}\n'
         f'    </div>\n'
-        f'    <hr>\n'
         f'</article>\n'
     )
 
