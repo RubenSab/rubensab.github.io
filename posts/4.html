@@ -23,7 +23,7 @@
         <p>Some times ago, while designing a custom <a href="https://github.com/RubenSab/Zedecim-ISA-emulator">CPU emulator</a>, I stumbled into a math problem: I needed to pick <strong>random whole numbers</strong> in <strong>any given range</strong> using only a (boolean) value that can casually become 0 or 1 if asked.</p>
 <p>Think of this random, two-sided value as a <strong>coin</strong> that can be tossed on its head (1) or tail (0), and imagine ranges from 0 to n as an n+1 sided <strong>dice</strong>.</p>
 <p>This simplification works because extracting a casual number from 20 to 25 can be thought as extracting it from 0 to 5 and adding a fixed offset, like 20 in this case.</p>
-<h1>First attempt, coin tosses as increments</h1>
+<h1>First attempt, summing coin tosses</h1>
 <p>Let's try to simulate a classic <strong>six sided dice</strong>. Could we toss <strong>5 coins</strong> and take the <strong>number of heads +1</strong> to get numbers from 1 to 6?</p>
 <p>I tested this approach with one million "dice" made like this and this is the result:</p>
 <p><img alt="uneven distribution" src="4_imgs/sum_histogram.png" /></p>
@@ -56,13 +56,25 @@ The idea is simple, we can <strong>chain choices</strong> like this:</p>
 <p>A <strong>path in a binary tree is equivalent to a number</strong> written in binary, because 0 can be thought as <em>right</em> and 1 as <em>left</em>, so we can <strong>treat coin tosses as binary digits</strong> to get a random number.</p>
 <p>With this very efficient process we <strong>halve the number of choices left to make</strong> every time we make one (<strong>logarithmic growth</strong> of choices as the number of final states grows).</p>
 <h2>There's a problem</h2>
-<p>As it is, we can only have dices whose number of faces is a <strong>power of two</strong>.</p>
-<p>For example, to simulate a 6 sided dice, we can <strong>toss 3 coins</strong> like before, as 2^3 (8) is the smallest power of two larger than 6, and <strong>repeat</strong> if the result is larger than 5.</p>
-<p>There's <strong>no way around it</strong> without increasing the amount of coins used or having a biased distribution.</p>
-<p>In the worst case, the number of <strong>dice rolls rejected</strong> tends to <strong>50%</strong>.</p>
+<p>As it is, we can only have dices whose number of faces is a <strong>power of two</strong>, but the initial request deals with <strong>any</strong> possible range.</p>
+<p>To simulate a 6 sided dice, we can <strong>toss 3 coins</strong> like before, as 2^3 (8) is the smallest power of two larger than 6, but we need a way to adapt the range [0; 7] to the range [0; 5].</p>
+<h3>Wrapping numbers around a wheel?</h3>
+<p>To solve the problem quickly, we could <strong>map</strong> the range [0; 2^n] to our desired range.</p>
+<p>The <strong>modulo</strong> operator (%) appears to fit the job nicely, because it "<strong>wraps</strong>" the <strong>infinite number line</strong> into a <strong>finite wheel</strong>. Think of it like a <strong>12 hours clock</strong> marking the infinite passing of hours.  </p>
+<p>Concretely, here's how the mapping is done:</p>
+<div class="codehilite"><pre><span></span><code>0 1 2 3 4 5 6 7  [0; 8] range
+| | | | | | | |  n % 6
+0 1 2 3 4 5 0 1  [0; 6] range
+</code></pre></div>
+
+<p>Despite being a <strong>quick fix</strong>, this approach is <strong>biased</strong>, because 2 numbers map to 0, another 2 map to 1, but only one number each maps to 2, 3, 4 and 5, so 0 and 1 will be more probable than other numbers.</p>
+<h3>Rejection sampling</h3>
+<p>What if we gave up and just <strong>discard</strong> the numbers outside our desired range, then try again until we get a <strong>valid</strong> number?</p>
+<p>Actually, there's <strong>no way around it</strong> without increasing the amount of coins used or having a biased distribution.</p>
+<p>It's trivial to prove that in the worst case, the number of <strong>dice rolls rejected</strong> tends to <strong>50%</strong>, but how bad would this be?</p>
 <p><img alt="retries histogram" src="4_imgs/retries_histogram.png" /></p>
 <p>This isn’t as bad as it looked on paper: in a million dice rolls, <strong>99%</strong> of rolls produced a valid number after <strong>6 retries or fewer</strong>, <strong>90% within 3 retries</strong>, and <strong>50% after just 1 retry</strong>.</p>
-<p>This shows that the method is not only <strong>elegant</strong> and <strong>simple</strong>, but also surprisingly <strong>efficient</strong>.</p>
+<p>This shows that the method is not only <strong>elegant</strong> and <strong>fair</strong>, but also unexpectedly <strong>efficient</strong>.</p>
     </div>
 </article>
 
