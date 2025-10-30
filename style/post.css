@@ -1,0 +1,30 @@
+.post {
+	background-color: #1c1c1c;
+	padding: 20px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+.thumbnail img {
+	display: block;
+  	width: 100%;
+  	aspect-ratio: 21 / 9;
+  	border-radius: 6px;
+  	object-fit: cover;	
+  	object-position: top;
+  	margin-bottom: 15px;
+  	margin-top: 15px;
+}
+
+.title h1 {
+	font-family: var(--text-font);
+	margin: 0 !important;
+}
+
+.date {
+	margin-top: 5px;
+}
+
+.header {
+	margin-bottom: 30px;
+}
