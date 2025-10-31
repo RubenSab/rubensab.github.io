@@ -86,9 +86,3 @@ a:hover {
   font-weight: bold;
   color: var(--secondary-accent-color);
 }
-
-br {
-  margin-bottom: 16px !important; 
-}
-
-
