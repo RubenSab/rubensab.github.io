@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Codystar:wght@300;400&family=IM+Fell+Great+Primer:ital@0;1&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Codystar:wght@300;400&family=IM+Fell+Great+Primer:ital@0;1&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Joan&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap');
 
 /* === Global variables === */
 :root {
-  --title-font: "Codystar";
+  --big-title-font: "Codystar";
+  --title-font: "Neuton";
   --text-font: "IM Fell Great Primer";
-  --mono-font: "Bitcount Grid Single";
+  --mono-font: "Jetbrains Mono";
   --accent-color: #B0FFFA;
   --secondary-accent-color: #5C9E9A;
   --background-color: #000;
   --text-color: #ccc;
   --bold-color: #fff;
-  --title-color: #D8F2F1;
+  --title-color: #fff;
 }
 
 body {
@@ -36,16 +37,19 @@ body {
 
 h2, h3, h4, h5, h6 {
   color: var(--title-color);
+  font-family: var(--title-font);
+  font-weight: 400;
 }
 
 h1 {
-  font-family: var(--title-font);
+  font-family: var(--big-title-font);
+  color: var(--title-color);
   font-weight: 500;
   font-size: 40px;
   margin-bottom: 30px;
 }
 
-p, a, ul, li, code {
+p, a, ul, li {
   font-family: var(--text-font);
   margin-top: 16px;
   line-height: 1.6rem;
@@ -62,8 +66,8 @@ p {
 }
 
 code {
-  font-family: var(--mono-font) !important;
-  font-size: 20px;
+  font-family: var(--mono-font);
+  font-size: 16px;
   color: var(--text-color);
 }
 
@@ -85,6 +89,7 @@ a:hover {
 }
 
 br {
-  margin-bottom: 14px !important; 
+  margin-bottom: 16px !important; 
 }
+
 

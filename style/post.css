@@ -10,8 +10,7 @@
 }
 
 h1 {
-	font-family: var(--text-font) !important;
-	color: var(--title-color);
+	font-family: var(--title-font) !important;
 	margin: 0 !important;
 
 .header {
