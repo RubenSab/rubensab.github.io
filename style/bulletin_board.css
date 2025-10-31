@@ -15,10 +15,12 @@
   	margin-bottom: 15px;
 }
 
-.post .title {
-	margin-bottom: 15px;
+h1 {
+	margin-top: 15px !important;
+	margin-bottom: 15px !important;
 }
 
 .post .date {
+	margin-top: 5px;
 	margin-bottom: 0px;
 }
