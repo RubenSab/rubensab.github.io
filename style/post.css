@@ -1,17 +1,21 @@
-.thumbnail img {
+img {
 	display: block;
   	width: 100%;
-  	aspect-ratio: 21 / 9;
   	border-radius: 6px;
   	object-fit: cover;	
   	object-position: top;
-  	margin-bottom: 15px;
-  	margin-top: 15px;
+  	margin-bottom: 10px;
+  	margin-top: 10px;
+}
+
+.thumbnail img {
+  	aspect-ratio: 21 / 9;
 }
 
 h1 {
 	font-family: var(--title-font) !important;
-	margin: 0 !important;
+	margin-top: 0 !important;
+	margin-bottom: 10px;
 
 .header {
 	margin-bottom: 30px;

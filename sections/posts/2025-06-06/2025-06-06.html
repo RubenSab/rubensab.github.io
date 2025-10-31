@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.00, maximum-scale=2.00, minimum-scale=1.00">
-    <title>Mockup</title>
+    <title>Fixing Chess</title>
     <link rel="stylesheet" href="../../../style/base.css">
     <link rel="stylesheet" href="../../../style/post.css">
 </head>
@@ -16,11 +16,67 @@
 	    	<div class="thumbnail">
 	    		<img src="chess_matrix.png" alt="Thumbnail">
 	    	</div>
-	    	<div class="title"><h1>Post title</h1></div>
+	    	<div class="title"><h1>Chess is unfair. Let's remove two pawns with data science to fix it</h1></div>
 	    	<div class="date">2025-06-06</div>
     	</div>
     	<div class="content">
-    		<p>test</p>
+    		<p>While reading a short story by the argentine writer Jorge Luis Borges titled "<strong>Pierre Menard, Author of Don Quixote</strong>", about a <em>fictional</em> scholar and his works, I stumbled upon something absurd the main character wrote about chess:</p>
+    		<blockquote>
+    		<p>[he wrote] <em>"a technical article on the possibility of enriching the game of chess by means of eliminating one of the rooks' pawns. Menard proposes, recommends, disputes and ends by rejecting this innovation."</em></p>
+    		</blockquote>
+    		<p>This "proposal" is simply crazy, one could just laugh and dismiss it as a funny <strong>joke</strong> by the witty Borges; but all of this gave me an <strong>idea</strong>, and it might be not as crazy:</p>
+    		<blockquote>
+    		<p>I started to search for the <strong>fairest</strong> starting position one could get by removing only a pawn from each side.</p>
+    		</blockquote>
+    		<p>Pierre Menard only said <em>"</em><em>one of the rooks' pawns</em><em>"</em>, so we can interpret it like <strong>this</strong>, a stupid setup where white can start by capturing black's rook right off and start winning:</p>
+    		<p><img alt="stupid setup" src="2_imgs/Pasted%20image%2020250606214503.png" /></p>
+    		<p>or (more reasonably) we could see it like <strong>this</strong>:</p>
+    		<p><img alt="diagonal root setup" src="2_imgs/Pasted%20image%2020250606215043.png" /></p>
+    		<p>This is not as absurd as before and actually it could make for a nice asymmetric and <strong>balanced</strong> gameplay!</p>
+    		<h1>Eureka moment 💡: in search of chess’s fairest start</h1>
+    		<p>What if, instead of comparing only "Menard's" setup to the default starting position, we consider <strong><em>every</em></strong> possible starting position in which we remove a pawn for each side, and we find a way to <strong>measure</strong> it's <strong>fairness</strong> compared to the default starting position?</p>
+    		<h2>What does <em>every position</em> mean?</h2>
+    		<p>Let's say we removed the <strong>sixth</strong> pawn from <strong>white</strong>'s row and the <strong>fourth</strong> one (by our perspective) from <strong>black</strong>'s:</p>
+    		<p><img alt="white sixth and black fourth pawns removed" src="2_imgs/Pasted%20image%2020250606220626.png" /></p>
+    		<p>For our purposes, we'll call this <strong>position</strong> <code>(6, 4)</code>, meaning (6th pawn removed from white, 4th pawn removed from black).</p>
+    		<p>So in our analysis we'll consider every combination <code>(w,b)</code> with <code>w</code> and <code>b</code> ranging independently from 1 to 8, according to the pawn removed.</p>
+    		<h2>Measuring a position's fairness</h2>
+    		<p>Isn't it strange to think that it's possible to measure pretty accurately <strong>who's winning</strong> a chess match with just a <strong>number</strong>? The unfathomable complexity of chess would say otherwise.</p>
+    		<h3>Neural network comes to rescue!</h3>
+    		<p>Fortunately <a href="https://stockfishchess.org/">Stockfish</a>, the strongest chess engine (AI) in the world as of today, has the only two things we need:</p>
+    		<ul>
+    		<li>the ability to <strong>evaluate chess positions</strong> with a single number, based on the calculation of (almost) <strong>every possible future opponent move</strong> up to a certain <strong>depth</strong>,</li>
+    		<li>a very user-friendly <strong>python library</strong> to use it on one's own computer.</li>
+    		</ul>
+    		<h3>How does <strong>Stockfish</strong> quantify advantage</h3>
+    		<p>Loading a chess position into Stockfish is pretty simple, we just need to feed it it's <strong>FEN</strong> (Forsyth-Edwards Notation) which is a <strong>standard format</strong> to tell where the pieces are at (the last example would have this FEN: <code>rnbqkbnr/ppp1pppp/8/8/8/8/PPPPP1PP/RNBQKBNR w KQkq - 0 1</code>).</p>
+    		<p>After the position is loaded, we can make it calculate the advantage with a simple function: we'll get the result in <em>centipawns</em>.</p>
+    		<p><strong>Centipawns</strong> are just "cents of a pawn", so if the position has an <strong>evaluation</strong> of -20, it means as if black had a <em>fifth of a pawn</em> of advantage (20/100 pawns) more than white;</p>
+    		<p>the sign tell us who's winning (+ for white and -for black).</p>
+    		<blockquote>
+    		<p>Fun fact: as is stated in the title, chess default starting setup is objectively unfair, because white has around +20 centipawns of advantage.</p>
+    		</blockquote>
+    		<p>We can also <strong>normalize</strong> the <strong>evaluation in centipawns</strong> with the formula of the <strong>curve below</strong> to get the <strong>draw probability</strong> (assuming a "perfect" play), an effective measure of a position's fairness or <strong>balance</strong>.</p>
+    		<p><em>Draw probability % = 100 × 2^(-(centipawns/100)²)</em></p>
+    		<p><img alt="gaussian-like formula for draw probability" src="2_imgs/Pasted%20image%2020250606224822.png" /></p>
+    		<h2>Visualizing every combination's draw probability</h2>
+    		<p>After writing an running the python script for days, I was able to get a general overview of the draw probabilities according to which pawns were removed.</p>
+    		<p><img alt="draw probabilities matrix" src="2_imgs/draw_probabilities_at_depth_30.png" /></p>
+    		<p>I <strong>labeled</strong> the pawns based on <strong>which piece they had behind</strong> for a better visualization.</p>
+    		<p>Notice that <strong>nearly half</strong> (28) of our custom positions are <strong>more balanced than the default</strong> starting one!</p>
+    		<blockquote>
+    		<p>Even one of <strong>Pierre Menard's proposal interpretations</strong> is slightly more balanced, <strong>proving our initial point</strong>!</p>
+    		<p>However the <strong>two most balanced ones</strong> strike clear with this color palette: <code>(7, 4)</code> and <code>(7, 5)</code>.</p>
+    		</blockquote>
+    		<h2>Two contestants: finding the winner</h2>
+    		<p>I made a second script to <strong>test a single position</strong> to a greater depth (40 half-moves in the future rather then 30 like before), and these are the results (in centipawns):</p>
+    		<p><img alt="7 4 evaluation" src="2_imgs/single_position_hist_(7,4)_depth_40.png" /></p>
+    		<p><img alt="7 5 evaluation" src="2_imgs/single_position_hist_(7,5)_depth_40.png" /></p>
+    		<p>This is astonishing: position <code>(7,5)</code> always gave <strong>0 centipawns</strong> of advantage. Consistently. <strong>FOR 25 TIMES</strong>.</p>
+    		<p><img alt="absurd evaluation log from terminal" src="2_imgs/Screenshot%20From%202025-06-06%2019-12-21.png" /></p>
+    		<p><strong>The winner is clear</strong>, according to <strong>Stockfish</strong>, this is the most balanced starting position you could get by removing a pawn for side and playing without blunders:</p>
+    		<p><img alt="7 5 clear verdict" src="2_imgs/Pasted%20image%2020250606232721.png" /></p>
+    		<p>Is this position the fairest of them all? Only one way to find out: <strong>play it.</strong></p>
     	</div>
     </div>
 </body>

@@ -16,7 +16,7 @@
 
 body {
   font-family: var(--text-font);
-  font-size: 22px;
+  font-size: 20px;
   background-color: #000;
   background-size: cover;
   background-repeat: no-repeat;
@@ -30,7 +30,7 @@ body {
 }
 
 .container {
-  max-width: 780px;
+  max-width: 700px;
   margin: auto;
   box-sizing: border-box;
 }
@@ -52,7 +52,6 @@ h1 {
 p, a, ul, li {
   font-family: var(--text-font);
   margin-top: 16px;
-  line-height: 1.6rem;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
