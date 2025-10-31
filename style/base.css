@@ -45,7 +45,7 @@ h1 {
   color: var(--title-color);
   font-weight: 500;
   font-size: 40px;
-  margin: 0 !important;
+  margin-bottom: 10px;
 }
 
 p, a, ul, li {
@@ -84,4 +84,18 @@ a {
 a:hover {
   font-weight: bold;
   color: var(--secondary-accent-color);
+}
+
+img {
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 15px;
+}
+
+.back-link {
+  display: block;
+  margin-bottom: 15px;
 }
