@@ -64,9 +64,9 @@
     		<p>The <strong>modulo</strong> operator (%) appears to fit the job nicely, because it "<strong>wraps</strong>" the <strong>infinite number line</strong> into a <strong>finite wheel</strong>. Think of it like a <strong>12 hours clock</strong> marking the infinite passing of hours.  </p>
     		<p>Concretely, here's how the mapping is done:</p>
     		<div class="codehilite"><pre><span></span><code>
-    		0 1 2 3 4 5 6 7    [0; 8] range
-    		| | | | | | | |
-    		0 1 2 3 4 5 0 1    [0; 6] range
+0 1 2 3 4 5 6 7    [0; 8] range
+| | | | | | | |
+0 1 2 3 4 5 0 1    [0; 6] range
     		</code></pre></div>
     		<p>Despite being a <strong>quick fix</strong>, this approach is <strong>biased</strong>, because 2 numbers map to 0, another 2 map to 1, but only one number each maps to 2, 3, 4 and 5, so 0 and 1 will be more probable than other numbers.</p>
     		<h3>Rejection sampling</h3>
