@@ -20,9 +20,9 @@
 }
 
 body {
-  font-weight: 350;
+  font-weight: 300;
   font-family: var(--text-font);
-  font-size: 20px;
+  font-size: 22px;
   background-color: #000;
   background-size: cover;
   background-repeat: no-repeat;
@@ -56,7 +56,6 @@ h1 {
 }
 
 p, a, ul, li {
-  line-height: 1.5rem;
   font-family: var(--text-font);
   margin-top: 0px;
   word-wrap: break-word;
@@ -105,5 +104,5 @@ img {
 
 .back-link {
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }

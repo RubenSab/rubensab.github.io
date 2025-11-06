@@ -23,7 +23,6 @@
   grid-column: span 1;
 }
 
-/* 📱 Mobile: stack all images normally */
 @media (max-width: 768px) {
   .gallery {
     display: block; /* disables the grid layout */
