@@ -5,6 +5,12 @@
     src: url("fonts/futura/light.ttf");
 }
 
+@media (max-width: 768px) {
+  body {
+    font-size: 18px !important;
+  }
+}
+
 /* === Global variables === */
 :root {
   --big-title-font: "Codystar";
@@ -20,9 +26,9 @@
 }
 
 body {
+  font-size: 21px;
   font-weight: 300;
   font-family: var(--text-font);
-  font-size: 21px;
   background-color: #000;
   background-size: cover;
   background-repeat: no-repeat;
