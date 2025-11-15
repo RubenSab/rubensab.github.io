@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.00, maximum-scale=2.00, minimum-scale=1.00">
+    <title>Discrete-State Problem Solver</title>
+    <link rel="stylesheet" href="../../../style/base.css">
+    <link rel="stylesheet" href="../../../style/post.css">
+</head>
+
+<body>
+    <div class="container">
+    	<a href="../../../index.html" class="back-link">{ Go home }</a>
+		<div class="header">
+	    	<div class="thumbnail">
+	    		<img src="graph.gif" alt="Thumbnail">
+	    	</div>
+	    	<div class="title"><h1>Designing a Discrete-State Problem Solver</h1></div>
+	    	<div class="date">2025-11-16</div>
+    	</div>
+    	<div class="content">
+    	<p>Some days ago I finally finished coding the first stable version of the interpreter for  <a href="https://github.com/RubenSab/Stackade">Stackade</a>, my programming language.</p>
+<p>Getting tired of testing solutions for increasingly complex and language-specific problems, a rather "simple" problem (or so I thought), of a more abstract nature, piqued my interest.</p>
+<h1>A simple problem</h1>
+<p>The most natural structure you can work with in Stackade is the <strong>Stack</strong>, which is basically a <strong>pile of elements</strong>, nothing more.</p>
+<p>From now on, picture it as a <strong>string</strong> like "cba", where "c" is the downmost element and "a" is the upmost, going left to right.</p>
+<p>First things first, I wanted to know whether it was possible to start with the string "ab" and end with "abab" using some <strong>sequence</strong> made only by these three <strong>rules</strong>:</p>
+<ul>
+<li><code>dup</code>: duplicates the last character, so "ab" becomes "abb";</li>
+<li><code>swap</code>: swaps the last character and the one before it, so "ab" becomes "ba";</li>
+<li><code>rot</code>: swaps the last character with the third to last, so "abcd" becomes "adcb";</li>
+</ul>
+<p>How hard could that be? I thought that two or three steps could make for it, but when trying my hand, I got a solution double as long:</p>
+<ol>
+<li><strong>ab</strong> -&gt; ba (swap)</li>
+<li>ba -&gt; baa (dup)</li>
+<li>baa -&gt; aab (rot)</li>
+<li>aab -&gt; aabb (dup)</li>
+<li>aabb -&gt; abba (rot)</li>
+<li>abba -&gt; <strong>abab</strong> (swap)</li>
+</ol>
+<p>My concern is not finding <em>a</em> solution for this particular problem or a family of slightly different ones; I'm interested in finding <em>the</em> more efficient solution and demonstrating it, for <em>any</em> instance of this kind of problems.</p>
+<p>From an even broader perspective, maybe every simple enough problem definable with a "<strong>state</strong>" to <strong>reach</strong> from a <strong>starting one</strong>, plus a <strong>set of rules</strong> to transition from a state to another, can be solved in the <strong>same way</strong>.</p>
+<h1>The generic problem is a logic labyrinth</h1>
+<p>As stated above, every problem compatible with our idea of solution have common features, strikingly similar to the structure of a <strong>labyrinth</strong>:</p>
+<ul>
+<li>a set of states (the <em>labyrinth</em>), all with the same features, for example being a string of four characters at most;</li>
+<li>an <strong>initial</strong> state (the <em>entrance</em>);</li>
+<li>a "<strong>solved</strong>" state (the <em>exit door</em>);</li>
+<li>a set of <strong>rules</strong> to <strong>transition</strong> (the <em>corridors</em>) from a state to another. Note that some transitions (the <em>walls</em>) could be <strong>impossible</strong> to make. Think about the "ab" -&gt; "abab" example: we could not have applied <code>rot</code> to "ab", because it's only two characters long.</li>
+</ul>
+<p>Unsurprisingly, the simplest problem solvable with the system we are building is finding the shortest exit path of a labyrinth, provided that the map was properly encoded as a network of nodes, because there's no computation of next states involved, only the traversal of already existing ones.</p>
+<h1>Coding it</h1>
+<p><em>Object Oriented Programming</em> is the perfect fit for this project, because states can be build as <strong>objects</strong> storing particular data while sharing the same generic blueprint specified in their <strong>class</strong>.
+On the other hand, <strong>rules</strong> can be implemented as <strong>methods</strong> that compute the produced state and connect it to the previous one, growing the network.</p>
+    	</div>
+    </body>
+</html>
