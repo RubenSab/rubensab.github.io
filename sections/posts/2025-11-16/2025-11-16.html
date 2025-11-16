@@ -43,6 +43,15 @@
 </ol>
 <p>My concern is not finding <em>a</em> solution for this particular problem only; I'm interested in finding <em>the</em> more efficient solution and demonstrating it's the one, for <em>any</em> instance of this kind of problems.</p>
 <p>From an even broader perspective, maybe every simple enough problem definable with a "<strong>state</strong>" to <strong>reach</strong> from a <strong>starting one</strong>, plus a <strong>set of rules</strong> to go from a state to the possible next ones can be solved in the <strong>same way</strong>.</p>
+
+<p>For example, the "ab" -> "abab" problem lives in this "state space"<img src="state_space.png" alt="Problem's state space"></p>
+<ul>
+	<li>red arrows = <code style="color: #FA2020; font-weight: bold">dup</code> rule</li>
+	<li>blue arrows = <code style="color: #2070FA; font-weight: bold">swap</code> rule</li>
+	<li>green arrows = <code style="color: #46DB1D; font-weight: bold">rot</code> rule</li>
+</ul>
+<p>For visual clarity I have omitted the rules that produce the same state to which they are applied.</p>
+
 <h1>The generic problem is a logic labyrinth</h1>
 <p>As stated above, every problem compatible with our idea of solution have common features, strikingly similar to the structure of a <strong>labyrinth</strong>:</p>
 <ul>
