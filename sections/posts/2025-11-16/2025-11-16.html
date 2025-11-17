@@ -15,7 +15,7 @@
     	<a href="../../../index.html" class="back-link">{ Go home }</a>
 		<div class="header">
 	    	<div class="thumbnail">
-	    		<img src="graph.gif" alt="Thumbnail">
+	    		<img src="8.png" alt="Thumbnail" style="aspect-ratio: 21/9">
 	    	</div>
 	    	<div class="title"><h1>Designing a Discrete-State Problem Solver</h1></div>
 	    	<div class="date">2025-11-16</div>
@@ -43,14 +43,29 @@
 </ol>
 <p>My concern is not finding <em>a</em> solution for this particular problem only; I'm interested in finding <em>the</em> more efficient solution and demonstrating it's the one, for <em>any</em> instance of this kind of problems.</p>
 <p>From an even broader perspective, maybe every simple enough problem definable with a "<strong>state</strong>" to <strong>reach</strong> from a <strong>starting one</strong>, plus a <strong>set of rules</strong> to go from a state to the possible next ones can be solved in the <strong>same way</strong>.</p>
+<h2>The state space</h2>
+<blockquote>In computer science, a state space is a discrete space representing the set of <b>all possible configurations of a system.</b></i></blockquote>
+<p>For example, the "ab" -> "abab" problem lives in this "state space"<img src="state_space.png" alt="Problem's state space"> which has 3 "islands", or more appropriately <i><b>disjointed classes</b></i>, meaning that if you start from a state inside one class, you will never be able to reach your desired end if it's inside another class. For example, you can't reach "aaa" from "ab".</p>
 
-<p>For example, the "ab" -> "abab" problem lives in this "state space"<img src="state_space.png" alt="Problem's state space"></p>
 <ul>
 	<li>red arrows = <code style="color: #FA2020; font-weight: bold">dup</code> rule</li>
 	<li>blue arrows = <code style="color: #2070FA; font-weight: bold">swap</code> rule</li>
 	<li>green arrows = <code style="color: #46DB1D; font-weight: bold">rot</code> rule</li>
 </ul>
+
 <p>For visual clarity I have omitted the rules that produce the same state to which they are applied.</p>
+
+<p>But what if the strings were <b>longer</b> than just 4 letters? would there be more disjointed classes, or a <b>different structure</b> altogether?
+<p>Here are the state spaces for strings long <b>at most</b> 5, 6, 7 and 8 letters.
+<div class="gallery">
+	<img src="5.png" loading="lazy" alt="state space of ab to ababa">
+	<img src="6.png" loading="lazy" alt="state space of ab to ababab">
+	<img src="7.png" loading="lazy" alt="state space of ab to abababa">
+	<img src="8.png" loading="lazy" alt="state space of ab to abababab">
+</div>
+<p>The <b>complexity increases</b> dramatically at each iteration, together with the number of <b>disjointed classes</b>. Notice the green and blue <b>rings</b>: they are classes made up of the longest strings possible in each iteration, where each element is linked to the next one with either <code>swap</code> or <code>rot</code>.</p>
+<p>These rings <b>couldn't be made using the <code>dup</code></b> operation (shown as red arrows), because <code>dup</code></b> does not have an
+<i><b>inverse operation</b></i> (at least we haven't defined it), while both <code>swap</code> and <code>rot</code> have one, <b>being the inverses of themselves</b>.
 
 <h1>The generic problem is a logic labyrinth</h1>
 <p>As stated above, every problem compatible with our idea of solution have common features, strikingly similar to the structure of a <strong>labyrinth</strong>:</p>

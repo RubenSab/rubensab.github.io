@@ -61,15 +61,16 @@ h1 {
   margin-bottom: 10px;
 }
 
-p, a, ul, li {
+p, a, ul, li, blockquote {
   font-family: var(--text-font);
   margin-top: 0px;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  margin-bottom: 30px;
 }
 
-p, a, ul {
-  margin-bottom: 30px;
+li {
+  margin-bottom: 0px;
 }
 
 p {
