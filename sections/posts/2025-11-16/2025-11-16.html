@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 
@@ -21,7 +20,7 @@
 	    	<div class="date">2025-11-16</div>
     	</div>
     	<div class="content">
-    	<p>Some days ago I finally finished coding the first stable version of the interpreter for  <a href="https://github.com/RubenSab/Stackade">Stackade</a>, my programming language.</p>
+    	<p>Some days ago I finally finished coding the first stable version of the interpreter for  <a href="https://github.com/RubenSab/Stackade">{ Stackade }</a>, my programming language.</p>
 <p>Getting tired of testing solutions for increasingly complex and language-specific problems, a rather "simple" problem (or so I thought) piqued my interest, one of a more abstract nature.</p>
 <h1>A simple problem</h1>
 <p>The most natural structure you can work with in Stackade is the <strong>Stack</strong>, which is basically a <strong>pile of elements</strong> and nothing more.</p>
@@ -55,18 +54,22 @@
 
 <p>For visual clarity I have omitted the rules that produce the same state to which they are applied.</p>
 
-<p>But what if the strings were <b>longer</b> than just 4 letters? would there be more disjointed classes, or a <b>different structure</b> altogether?
-<p>Here are the state spaces for strings long <b>at most</b> 5, 6, 7 and 8 letters.
-<div class="gallery">
-	<img src="5.png" loading="lazy" alt="state space of ab to ababa">
-	<img src="6.png" loading="lazy" alt="state space of ab to ababab">
-	<img src="7.png" loading="lazy" alt="state space of ab to abababa">
-	<img src="8.png" loading="lazy" alt="state space of ab to abababab">
-</div>
-<p>The <b>complexity increases</b> dramatically at each iteration, together with the number of <b>disjointed classes</b>. Notice the green and blue <b>rings</b>: they are classes made up of the longest strings possible in each iteration, where each element is linked to the next one with either <code>swap</code> or <code>rot</code>.</p>
+<p>Now let's write strings with <b>three different letters</b> (a b and c) instead of just two and see what happens.</p>
+<img src="4.png" loading="lazy" alt="3 letters making 4 long words">
+<p>This state space <b>contains fully</b> the previous one (its main structure can be seen in the lower right corner), and it's more than thrice as big with the new emerging structures!</p>
+<p>Notice the green and blue <b>rings</b>: they are classes made up of the longest strings possible in each iteration, where each element is linked to the next one with either <code>swap</code> or <code>rot</code>.</p>
 <p>These rings <b>couldn't be made using the <code>dup</code></b> operation (shown as red arrows), because <code>dup</code></b> does not have an
-<i><b>inverse operation</b></i> (at least we haven't defined it), while both <code>swap</code> and <code>rot</code> have one, <b>being the inverses of themselves</b>.
+<i><b>inverse operation</b></i> (at least we haven't defined one), while both <code>swap</code> and <code>rot</code> have one, <b>being the inverses of themselves</b>.</p>
 
+<p>But what if the strings were <b>longer</b> than just 4 letters? would there be more disjointed classes, or a <b>different structure</b> altogether?
+<p>Here are the state spaces for strings made with a, b, c and long <b>at most</b> 5, 6, 7 and 8 letters.
+<div class="gallery">
+	<img src="5.png" loading="lazy" alt="3 letters making 5 long words">
+	<img src="6.png" loading="lazy" alt="3 letters making 6 long words">
+	<img src="7.png" loading="lazy" alt="3 letters making 7 long words">
+	<img src="8.png" loading="lazy" alt="3 letters making 8 long words">
+</div>
+<p>The <b>complexity increases</b> dramatically with each iteration, together with the number of <b>disjointed classes</b>.
 <h1>The generic problem is a logic labyrinth</h1>
 <p>As stated above, every problem compatible with our idea of solution have common features, strikingly similar to the structure of a <strong>labyrinth</strong>:</p>
 <ul>
