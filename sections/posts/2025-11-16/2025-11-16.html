@@ -22,7 +22,8 @@
     	<div class="content">
     	<p>Some days ago I finally finished coding the first stable version of the interpreter for  <a href="https://github.com/RubenSab/Stackade">{ Stackade }</a>, my programming language.</p>
 <p>Getting tired of testing solutions for increasingly complex and language-specific problems, a rather "simple" problem (or so I thought) piqued my interest, one of a more abstract nature.</p>
-<h1>A simple problem</h1>
+
+<h1>A "simple" problem</h1>
 <p>The most natural structure you can work with in Stackade is the <strong>Stack</strong>, which is basically a <strong>pile of elements</strong> and nothing more.</p>
 <p>From now on, picture it as a <strong>string</strong> like "cba", where "c" is the downmost element and "a" is the upmost, going left to right.</p>
 <p>First things first, I wanted to know whether it was possible to start with the string "ab" and end with "abab" using a <strong>sequence</strong> of these three <strong>rules</strong>:</p>
@@ -42,7 +43,8 @@
 </ol>
 <p>My concern is not finding <em>a</em> solution for this particular problem only; I'm interested in finding <em>the</em> more efficient solution and demonstrating it's the one, for <em>any</em> instance of this kind of problems.</p>
 <p>From an even broader perspective, maybe every simple enough problem definable with a "<strong>state</strong>" to <strong>reach</strong> from a <strong>starting one</strong>, plus a <strong>set of rules</strong> to go from a state to the possible next ones can be solved in the <strong>same way</strong>.</p>
-<h2>The state space</h2>
+
+<h1>The state space</h1>
 <blockquote>In computer science, a state space is a discrete space representing the set of <b>all possible configurations of a system.</b></i></blockquote>
 <p>For example, the "ab" -> "abab" problem lives in this "state space"<img src="state_space.png" alt="Problem's state space"> which has 3 "islands", or more appropriately <i><b>disjointed classes</b></i>, meaning that if you start from a state inside one class, you will never be able to reach your desired end if it's inside another class. For example, you can't reach "aaa" from "ab".</p>
 
@@ -70,10 +72,11 @@
 	<img src="8.png" loading="lazy" alt="3 letters making 8 long words">
 </div>
 <p>The <b>complexity increases</b> dramatically with each iteration, together with the number of <b>disjointed classes</b>.
+
 <h1>The generic problem is a logic labyrinth</h1>
 <p>As stated above, every problem compatible with our idea of solution have common features, strikingly similar to the structure of a <strong>labyrinth</strong>:</p>
 <ul>
-<li>a set of states (the <em>labyrinth</em>), all with the same features, for example being a string of four characters at most;</li>
+<li>the <strong>state space</strong> (the <em>labyrinth</em> rooms), all with the same features, for example being a string of four characters at most;</li>
 <li>an <strong>initial</strong> state (the <em>entrance</em>);</li>
 <li>a "<strong>solved</strong>" state (the <em>exit door</em>);</li>
 <li>a set of <strong>rules</strong> to <strong>transition</strong> (the <em>corridors</em>) from a state to another. Note that some transitions (the <em>walls</em>) could be <strong>impossible</strong> to make. Think about the "ab" -&gt; "abab" example: we could not have applied <code>rot</code> to "ab", because it's only two characters long.</li>
@@ -82,6 +85,8 @@
 <h1>Coding it</h1>
 <p><em>Object Oriented Programming</em> is the perfect fit for this project, because states can be build as <strong>objects</strong> storing particular data while sharing the same generic blueprint specified in their <strong>class</strong>.
 On the other hand, <strong>rules</strong> can be implemented as <strong>methods</strong> that compute the next state and connect it to the previous one, growing the network.</p>
+
+<i>Work in progress...</p>
     	</div>
     </body>
 </html>
