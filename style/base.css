@@ -115,8 +115,7 @@ code:not(p code) {
     background-color: #1c1c1c !important;
     border-radius: 10px;
     margin-bottom: 10px;
-    white-space: pre-wrap;
-    overflow-x: auto;
+    white-space: no-wrap;
     margin-bottom: 20px !important;
     margin-top: 0px !important;
 }
