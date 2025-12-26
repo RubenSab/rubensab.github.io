@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.00, maximum-scale=2.00, minimum-scale=1.00">
+    <title>My DIY homeserver</title>
+    <link rel="stylesheet" href="../../../style/base.css">
+    <link rel="stylesheet" href="../../../style/post.css">
+    <style>
+        /* Inline code inside <p> */
+        p code {
+            font-family: var(--mono-font);
+            font-size: 0.9em;
+            color: var(--text-color);
+            background-color: #f0f0f0;
+            padding: 0.1em 0.3em;
+            border-radius: 3px;
+        }
+
+        /* Block-level code outside <p> */
+        code:not(p code) {
+            display: block;
+            font-family: var(--mono-font);
+            font-size: 16px;
+            color: var(--text-color);
+            background-color: #1c1c1c !important;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="../../../index.html" class="back-link">{ Go home }</a>
+        <div class="header">
+            <div class="thumbnail">
+                <img src="homeserver.jpg" alt="Thumbnail">
+            </div>
+            <div class="title"><h1>My DIY homeserver: what I learned and what could be improved</h1></div>
+            <div class="date">2025-12-26</div>
+        </div>
+        <div class="content">
+            <h1>Premise</h1>
+            <p>We live in an <em>app-centric world</em>.</p>
+            <p>This means that, for example, our photos and (encrypted) music lay in the so-called "<strong>cloud</strong>" to be displayed and listened through dedicated <strong>apps</strong>, rather than being files that we can own and easily store/manage ourselves.</p>
+            <p>Taking aside ethics and the wish of a <em>file-centric world</em>, to the average person the most <strong>tangible cons</strong> are that:</p>
+            <ul>
+                <li>the "cloud" is not a long-term storage solution;</li>
+                <li>the apps could be discontinued.</li>
+            </ul>
+            <p>One day the cloud services promise you a lot of space, and you make use of it, but the next day they shrink it down, leaving you in a <strong>hurry to move out</strong> at least some of your files (which is often a completely manual and clunky process), or to pay for more storage. You got even used to the app used to navigate your content, but now <strong>you'll have to abandon it</strong>.</p>
+            <p>This happened to me with Google Photos and Google Drive, which I don't recommend in the slightest.</p>
+
+            <h1>Objective</h1>
+            <p>Realising what I was missing, I wanted to implement a system <strong>in my house</strong> where:</p>
+            <ul>
+                <li>Files would be stored locally, without outsourcing to other online services.</li>
+                <li>Everything would be backed up periodically.</li>
+                <li>Every user <strong>from every device in the local network</strong> could display, download and upload files <b>from a simple web UI</b> on the browser, even in bulk.</li>
+                <li>I could monitor the energy consumption and its cost.</li>
+            </ul>
+
+            <h1>The hardware</h1>
+            <p>I used a crappy old <em>HP Pavilion G7 Notebook PC (model 103C5335KV G=N)</em> I had lying around.</p>
+            <p>Despite its age, a 1.60GHz CPU and being terrible as a PC, it has been providing a smooth experience as a homeserver. Its battery died a long time ago, but it doesn't matter, as servers need to be <strong>plugged 24/7</strong> in order to function properly with no downtime. Initially this concerned me, but after <strong>estimating the monthly cost</strong> by measuring the voltage over time, I found out that this setup is <strong>extremely cheap, more than any cloud service</strong>.</p>
+            <p>I also connected a 512GB hard drive to periodically backup data.</p>
+
+            <h1>The software</h1>
+            <p>I tried to flash a remarkably light Linux distro called <a href="https://www.alpinelinux.org/">Alpine Linux</a>, but there were compatibility problems, so I went for <a href="https://linuxmint.com/edition.php?id=323">Linux Mint Xfce</a>.</p>
+            <p>Sure, there are better distros, especially <strong>headless</strong> ones for this kind of task, but I was more familiar with Linux Mint, which is also very light.</p>
+
+            <h2>Copyparty</h2>
+            <img src="copyparty.png" alt="copyparty UI">
+            <p>I'm using <a href="https://github.com/9001/copyparty">Copyparty</a>, which according to many is the <strong>best</strong> simple FOSS file server out there. It's launched as if it was a single Python script, it's very user-friendly and rich, featuring:</p>
+            <ul>
+                <li>a nice UI,</li>
+                <li>a grid view,</li>
+                <li>bulk uploads, fast and resumable,</li>
+                <li>file previews,</li>
+                <li>a music player with an equalizer,</li>
+                <li>two markdown editors</li>
+            </ul>
+            <p>and more stuff I'll look into, like <a href="https://github.com/9001/copyparty?tab=readme-ov-file#accounts-and-volumes">users and permissions</a>.</p>
+            <p>After launching it from the terminal with the command <code>copyparty</code>, you'll get the <strong>local</strong> URL (and its QR code) to type in your browser.</p>
+            <h2>Power optimization</h2>
+            <h3>Don't suspend when the lid is closed</h3>
+            <p>I made the PC not suspend itself if the lid is closed, by editing <code>/etc/systemd/logind.conf</code> and setting:</p>
+            <code>HandleLidSwitch=ignore
+HandleLidSwitchExternalPower=ignore
+HandleLidSwitchDocked=ignore
+LidSwitchIgnoreInhibited=no</code>
+            <p><em>If you do this, remember to remove the # before each line you edit.</em></p>
+            <p>Then I applied the changes with:</p>
+            <p><code>sudo systemctl restart systemd-logind</code></p>
+
+            <h3>Remove the GUI, boot into text mode</h3>
+            <p>I also removed the <strong>desktop environment</strong> (Xfce) and its packages altogether to minimize power consumption:</p>
+            <code>sudo apt purge xfce4 xfce4-*
+sudo apt autoremove</code>
+            <p>Then I disabled the Display Manager:</p>
+            <code>sudo systemctl disable lightdm
+sudo systemctl stop lightdm</code>
+            <p>And made systemd boot into <strong>multi-user (text) mode</strong>:</p>
+            <code>sudo systemctl set-default multi-user.target</code>
+
+            <h2>Estimate server's electricity monthly cost</h2>
+            <p>Run:</p>
+            <code>cat /sys/class/power_supply/BAT1/voltage_now</code>
+            <p>This gives you the <strong>microvolts</strong> used by your computer. To get <strong>Volts (V)</strong>, multiply by 1000000.</p>
+            <p>Electricity is billed by the <strong>MegaWatt Hours (MWh)</strong>. To get <strong>wattage (W)</strong>, multiply <strong>Volts</strong> by the <strong>Amperes (A)</strong> on the charging cable (e.g., 2.5A).</p>
+            <p>Assuming the voltage stays constant for an hour, <strong>MWh</strong> is <strong>W/1000</strong>.</p>
+            <p>Multiply <strong>MWh</strong> by <strong>24</strong> (hours/day) and <strong>30</strong> (days/month). Finally, multiply by the <strong>cost per MWh</strong> (<a href="https://www.electricrate.com/data-center/electricity-prices-by-country/">varies by location</a>) to get the <strong>monthly cost</strong>.</p>
+            <p>For example, my setup consumes 7 Watts and costs <strong>less than 2€</strong> a month.</p>
+            <p>Note: Voltage can take <strong>weeks of uptime</strong> to stabilize. Mine took <strong>more than two weeks</strong>.</p>
+            <img src="wattage.png" alt="wattage plateauing over time">
+
+            <h2>Automating tasks</h2>
+            <p>You can use Cron, a powerful utility to launch processes according to a schedule, to automate tasks such as backups.</p>
+            <p>You need to run <code>crontab -e</code> and append scheduled commands in the file.</p>
+            <code>0 18 * * * git -C /home/ruben/homeserver/repos/active/wiki-sapienza-informatica pull
+0 0 * * 1  git -C /home/ruben/homeserver/repos/active/stackade pull
+0 0 * * 1  git -C /home/ruben/homeserver/repos/active/rubensab.github.io pull</code>
+            <p>For example here I'm scheduling the pull of some GitHub repos: the first one every day at 18:00 and the other two every Monday at midnight. You can learn and generate this syntax on <a href="https://crontab.guru/">Crontab Guru</a>.</p>
+            <img src="crontab_guru.png" alt="Crontab Guru Screenshot">
+            <h2>SSH connection for special tasks</h2>
+            <p>You can connect to the server PC from another device (<i>across the same WI-FI</i>) running <code>ssh yourIp</code>.
+                Then you'll be able to run commands remotely from the current terminal session, as if you were typing on the other PC.</p>
+        </div>
+    </div>
+</body>
+</html>

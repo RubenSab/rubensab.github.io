@@ -26,7 +26,7 @@
 }
 
 body {
-  font-size: 21px;
+  font-size: 20px;
   font-weight: 300;
   font-family: var(--text-font);
   background-color: #000;
@@ -51,6 +51,8 @@ h2, h3, h4, h5, h6 {
   color: var(--title-color);
   font-family: var(--title-font);
   font-weight: 400;
+  margin-bottom: 22px;
+  margin-top: 30px;
 }
 
 h1 {
@@ -61,12 +63,32 @@ h1 {
   margin-bottom: 10px;
 }
 
-p, a, ul, li, blockquote {
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+h4 {
+  font-size: 23px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+p, a, ul, blockquote {
   font-family: var(--text-font);
   margin-top: 0px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  margin-bottom: 30px;
+  margin-bottom: 22px !important;
 }
 
 li {
@@ -78,10 +100,32 @@ p {
 }
 
 code {
-  font-family: var(--mono-font);
-  font-size: 16px;
-  color: var(--text-color);
+  font-size: 16px !important;
 }
+
+/* Inline code inside <p> (default inline behavior) */
+p code {
+    font-family: var(--mono-font);
+    color: var(--text-color);
+    background-color: #1c1c1c !important;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+
+/* Block-level code outside <p> (your custom style) */
+code:not(p code) {
+    display: block;
+    font-family: var(--mono-font);
+    color: var(--text-color);
+    background-color: #1c1c1c !important;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    margin-bottom: 20px !important;
+    margin-top: 0px !important;
+}
+
 
 b, strong {
   font-weight: 600;
@@ -106,7 +150,7 @@ img {
   border-radius: 6px;
   object-fit: cover;
   object-position: top;
-  margin-bottom: 15px;
+  margin-bottom: 22px;
 }
 
 .back-link {

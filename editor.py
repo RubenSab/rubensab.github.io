@@ -1,6 +1,6 @@
 import markdown, sys
 
-def export_html(input_file: str, output_file: str) -> None:
+def export_html(input_file: str) -> None:
     date = input_file.split(".")[0]
     with open(input_file, "r", encoding="utf-8") as input_file:
         text = input_file.read()
@@ -34,8 +34,8 @@ def export_html(input_file: str, output_file: str) -> None:
     </body>
 </html>
 """
-    with open(output_file, "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
+    with open(date+".html", "w", encoding="utf-8", errors="xmlcharrefreplace") as output_file:
         output_file.write(html)
 
 if __name__ == "__main__":
-    export_html(sys.argv[1], sys.argv[2])
+    export_html(sys.argv[1])
