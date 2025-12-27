@@ -91,7 +91,17 @@ li {
 }
 
 p {
+  font-size: 20px;
   margin-bottom: 30px;
+}
+
+.katex {
+  font-size: 20px !important;
+  color: var(--text-font);
+}
+
+.katex-display {
+  margin: 0 !important;
 }
 
 code {
