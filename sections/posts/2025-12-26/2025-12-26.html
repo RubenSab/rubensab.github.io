@@ -8,32 +8,6 @@
     <title>My DIY homeserver</title>
     <link rel="stylesheet" href="../../../style/base.css">
     <link rel="stylesheet" href="../../../style/post.css">
-    <style>
-        /* Inline code inside <p> */
-        p code {
-            font-family: var(--mono-font);
-            font-size: 0.9em;
-            color: var(--text-color);
-            background-color: #f0f0f0;
-            padding: 0.1em 0.3em;
-            border-radius: 3px;
-        }
-
-        /* Block-level code outside <p> */
-        code:not(p code) {
-            display: block;
-            font-family: var(--mono-font);
-            font-size: 16px;
-            color: var(--text-color);
-            background-color: #1c1c1c !important;
-            padding: 10px;
-            border-radius: 10px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            white-space: pre-wrap;
-            overflow-x: auto;
-        }
-    </style>
 </head>
 
 <body>
@@ -97,8 +71,7 @@ HandleLidSwitchExternalPower=ignore
 HandleLidSwitchDocked=ignore
 LidSwitchIgnoreInhibited=no</code>
             <p><em>If you do this, remember to remove the # before each line you edit.</em></p>
-            <p>Then I applied the changes with:</p>
-            <p><code>sudo systemctl restart systemd-logind</code></p>
+            <p>Then I applied the changes with: <code>sudo systemctl restart systemd-logind</code></p>
 
             <h3>Remove the GUI, boot into text mode</h3>
             <p>I also removed the <strong>desktop environment</strong> (Xfce) and its packages altogether to minimize power consumption:</p>

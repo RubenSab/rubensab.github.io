@@ -104,7 +104,7 @@ p code {
     color: var(--text-color);
     background-color: #1c1c1c !important;
     padding: 0.1em 0.3em;
-    border-radius: 3px;
+    border-radius: 6px;
 }
 
 /* Block-level code outside <p> (your custom style) */
@@ -113,7 +113,8 @@ code:not(p code) {
     font-family: var(--mono-font);
     color: var(--text-color);
     background-color: #1c1c1c !important;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 6px;
     margin-bottom: 10px;
     white-space: pre !important; /* Preserve line breaks and spaces */
     margin-bottom: 20px !important;
