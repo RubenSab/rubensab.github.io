@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a1b6827-ae4d-48c9-b29b-43bea4d0ad85" name="Changes" comment="fixed titles font">
-      <change beforePath="$PROJECT_DIR$/sections/posts/2025-12-26/2025-12-26.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/posts/2025-12-26/2025-12-26.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/base.css" afterDir="false" />
+    <list default="true" id="0a1b6827-ae4d-48c9-b29b-43bea4d0ad85" name="Changes" comment="fixed code rendering">
+      <change afterPath="$PROJECT_DIR$/sections/photography/2025-12-31/2025-12-31.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/photography/photography.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/photography/photography.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +28,9 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="3087Q7Ug0W4TmoSG0OY3ZI7oW5g" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -180,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753258094638</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fixed code rendering">
+      <option name="closed" value="true" />
+      <created>1766843128748</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1766843128748</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -192,6 +204,7 @@
     <MESSAGE value="fixed a margin" />
     <MESSAGE value="fixed dividers" />
     <MESSAGE value="fixed titles font" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed titles font" />
+    <MESSAGE value="fixed code rendering" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed code rendering" />
   </component>
 </project>
