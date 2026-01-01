@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a1b6827-ae4d-48c9-b29b-43bea4d0ad85" name="Changes" comment="new post">
-      <change beforePath="$PROJECT_DIR$/sections/photography/2025-12-31/2025-12-31.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/photography/2025-12-31/2025-12-31.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/photography/photography.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/photography/photography.html" afterDir="false" />
+    <list default="true" id="0a1b6827-ae4d-48c9-b29b-43bea4d0ad85" name="Changes" comment="added XXIIVV webring icon">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/index.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/index.png" beforeDir="false" afterPath="$PROJECT_DIR$/style/index.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/post.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +202,31 @@
       <option name="project" value="LOCAL" />
       <updated>1767291121430</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="new post">
+      <option name="closed" value="true" />
+      <created>1767291576307</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1767291576307</updated>
+    </task>
+    <task id="LOCAL-00019" summary="deleted waste">
+      <option name="closed" value="true" />
+      <created>1767291633395</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1767291633395</updated>
+    </task>
+    <task id="LOCAL-00020" summary="added XXIIVV webring icon">
+      <option name="closed" value="true" />
+      <created>1767299203485</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1767299203485</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -213,6 +240,8 @@
     <MESSAGE value="fixed titles font" />
     <MESSAGE value="fixed code rendering" />
     <MESSAGE value="new post" />
-    <option name="LAST_COMMIT_MESSAGE" value="new post" />
+    <MESSAGE value="deleted waste" />
+    <MESSAGE value="added XXIIVV webring icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="added XXIIVV webring icon" />
   </component>
 </project>
