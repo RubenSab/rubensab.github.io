@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
         img.classList.add('landscape');
         return;
       }
+      if (img.hasAttribute('vertical')) {
+        img.classList.add('portrait');
+        return;
+      }
       
       // Skip if already classified
       if (img.classList.contains('landscape') || img.classList.contains('portrait')) return;
