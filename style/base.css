@@ -18,6 +18,7 @@
   --text-color: #ccc;
   --bold-color: #fff;
   --title-color: #fff;
+  --date-color: #888;
 }
 
 body {
@@ -132,8 +133,6 @@ code:not(p code) {
     overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
-
-
 b, strong {
   font-weight: 600;
   color: var(--bold-color) !important;
@@ -163,4 +162,10 @@ img {
 .back-link {
   display: block;
   margin-bottom: 18px;
+}
+
+.date {
+  font-size: 18px;
+  margin-top: 12px;
+  color: var(--date-color);
 }
