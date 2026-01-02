@@ -169,3 +169,5 @@ img {
   margin-top: 12px;
   color: var(--date-color);
 }
+
+ul {list-style-type: disc;}
