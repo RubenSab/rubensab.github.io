@@ -27,11 +27,9 @@ Retrieved 2026-01-03, License - CC BY-SA 4.0
     grid-auto-flow: column;
 }
 
-.item {
-}
-
 @media (max-width: 480px) {
     .items-container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+        grid-auto-flow: dense; /* Optional: Helps fill gaps */
     }
 }
