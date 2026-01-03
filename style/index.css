@@ -16,14 +16,25 @@ h1 {
 	margin-bottom: 15px !important;	
 }
 
-.column {
-  float: left;
-  width: 33%;
+.items-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.item {
+    text-align: left;
+    flex-basis: 100%;
+}
+
+@media (max-width: 500px) {
+    .item {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 500px) {
+    .item {
+        flex-basis: 33%;
+    }
 }
