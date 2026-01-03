@@ -119,7 +119,7 @@ p code {
 }
 
 /* Block-level code outside <p> (your custom style) */
-code:not(p code) {
+code:not(p code):not(li code) {
     display: block;
     font-family: var(--mono-font);
     color: var(--text-color);
