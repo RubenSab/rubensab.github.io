@@ -16,25 +16,22 @@ h1 {
 	margin-bottom: 15px !important;	
 }
 
+/*
+Source - https://stackoverflow.com/a
+Posted by Michael Benjamin, modified by community. See post 'Timeline' for change history
+Retrieved 2026-01-03, License - CC BY-SA 4.0
+*/
 .items-container {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: row;
 }
 
 .item {
-    text-align: left;
-    flex-basis: 100%;
 }
 
-@media (max-width: 500px) {
-    .item {
-        flex-basis: 50%;
-    }
-}
-
-@media (min-width: 500px) {
-    .item {
-        flex-basis: 33%;
+@media (max-width: 480px) {
+    .items-container {
+        grid-template-columns: 1fr 1fr;
     }
 }
