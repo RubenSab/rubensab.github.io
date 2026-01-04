@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a1b6827-ae4d-48c9-b29b-43bea4d0ad85" name="Changes" comment="added idea">
+    <list default="true" id="0a1b6827-ae4d-48c9-b29b-43bea4d0ad85" name="Changes" comment="fixed index.html layout">
+      <change afterPath="$PROJECT_DIR$/sections/posts/2026-01-04/2026-01-04.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sections/posts/post_mockup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mockup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/posts/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/posts/posts.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767452746093</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="fixed index.html layout">
+      <option name="closed" value="true" />
+      <created>1767546551539</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1767546551539</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -342,8 +354,8 @@
     <MESSAGE value="fixed base.css" />
     <MESSAGE value="changed index.html layout" />
     <MESSAGE value="fixed code rendering" />
-    <MESSAGE value="fixed index.html layout" />
     <MESSAGE value="added idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="added idea" />
+    <MESSAGE value="fixed index.html layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed index.html layout" />
   </component>
 </project>
