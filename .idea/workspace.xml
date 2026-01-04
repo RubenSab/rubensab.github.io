@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a1b6827-ae4d-48c9-b29b-43bea4d0ad85" name="Changes" comment="added art section">
+    <list default="true" id="0a1b6827-ae4d-48c9-b29b-43bea4d0ad85" name="Changes" comment="working on post">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/art/art.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/art/art.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/posts/2026-01-04/2026-01-04.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/posts/2026-01-04/2026-01-04.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/art.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/art.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,7 +345,31 @@
       <option name="project" value="LOCAL" />
       <updated>1767553480846</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="working on post">
+      <option name="closed" value="true" />
+      <created>1767553979334</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1767553979334</updated>
+    </task>
+    <task id="LOCAL-00035" summary="working on post">
+      <option name="closed" value="true" />
+      <created>1767554155225</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1767554155225</updated>
+    </task>
+    <task id="LOCAL-00036" summary="working on post">
+      <option name="closed" value="true" />
+      <created>1767554244049</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1767554244049</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -381,6 +403,7 @@
     <MESSAGE value="fixed index.html layout" />
     <MESSAGE value="added post" />
     <MESSAGE value="added art section" />
-    <option name="LAST_COMMIT_MESSAGE" value="added art section" />
+    <MESSAGE value="working on post" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on post" />
   </component>
 </project>
