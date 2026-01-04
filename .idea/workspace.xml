@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a1b6827-ae4d-48c9-b29b-43bea4d0ad85" name="Changes" comment="added post">
-      <change afterPath="$PROJECT_DIR$/sections/art/art.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/art.css" afterDir="false" />
+    <list default="true" id="0a1b6827-ae4d-48c9-b29b-43bea4d0ad85" name="Changes" comment="added art section">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/art/art.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/art/art.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sections/posts/2026-01-04/2026-01-04.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/posts/2026-01-04/2026-01-04.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/art.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/art.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -339,7 +339,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767548201985</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="added art section">
+      <option name="closed" value="true" />
+      <created>1767553480846</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1767553480846</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -372,6 +380,7 @@
     <MESSAGE value="added idea" />
     <MESSAGE value="fixed index.html layout" />
     <MESSAGE value="added post" />
-    <option name="LAST_COMMIT_MESSAGE" value="added post" />
+    <MESSAGE value="added art section" />
+    <option name="LAST_COMMIT_MESSAGE" value="added art section" />
   </component>
 </project>

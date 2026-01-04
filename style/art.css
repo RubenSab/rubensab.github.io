@@ -5,13 +5,17 @@
 	margin-bottom: 20px;
 }
 
+.title {
+    margin-bottom: 22px;
+}
+
 .post img {
 	display: block;
   	width: 100%;
   	border-radius: 6px;
   	object-fit: cover;	
   	object-position: top;
-  	margin-bottom: 12px;
+  	margin-bottom: 0px;
 }
 
 h1 {
@@ -20,6 +24,6 @@ h1 {
 }
 
 .post .date {
-	margin-top: 10px;
-	margin-bottom: 0px;
+	margin-top: 0px;
+	margin-bottom: 10px;
 }
