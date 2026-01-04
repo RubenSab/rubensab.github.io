@@ -1,7 +1,23 @@
-body {
-	background-image: url("index.png");
-	background-position: top;
+html, body {
+    height: 100%;
+    overflow: hidden;
 }
+
+body {
+    background-image: url("index.png");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+    width: 100%;
+}
+
 
 li {
 	margin-bottom: 14px !important;
