@@ -10,6 +10,10 @@ body {
     background-repeat: no-repeat;
 }
 
+p {
+    margin: 0 !important;
+}
+
 .centered {
     display: flex;
     align-items: center;
@@ -29,7 +33,7 @@ ul {
 }
 
 h1 {
-	margin-bottom: 15px !important;	
+	margin-bottom: 30px !important;
 }
 
 .item {
@@ -45,6 +49,8 @@ Retrieved 2026-01-03, License - CC BY-SA 4.0
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-auto-flow: column;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 @media (max-width: 480px) {
