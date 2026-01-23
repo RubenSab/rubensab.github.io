@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a1b6827-ae4d-48c9-b29b-43bea4d0ad85" name="Changes" comment="changed index.html layout">
-      <change afterPath="$PROJECT_DIR$/sections/posts/2026-01-04/imgs/comparison2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/ideas.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/ideas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/photography/2025-11-1/2025-11-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/photography/2025-11-1/2025-11-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/photography/2025-11-10/2025-11-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/photography/2025-11-10/2025-11-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/photography/2025-12-31/2025-12-31.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/photography/2025-12-31/2025-12-31.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/posts/2025-04-22/2025-04-22.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/posts/2025-04-22/2025-04-22.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/posts/2025-06-06/2025-06-06.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/posts/2025-06-06/2025-06-06.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/posts/2025-06-29/2025-06-29.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/posts/2025-06-29/2025-06-29.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/posts/2025-08-06/2025-08-06.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/posts/2025-08-06/2025-08-06.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/posts/2025-11-16/2025-11-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/posts/2025-11-16/2025-11-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/posts/2025-12-26/2025-12-26.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/posts/2025-12-26/2025-12-26.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/posts/2026-01-04/2026-01-04.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/posts/2026-01-04/2026-01-04.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/posts/2026-01-04/flashes.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/posts/2026-01-04/imgs/flash_comparison.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/posts/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/sections/posts/posts.html" afterDir="false" />
-    </list>
+    <list default="true" id="0a1b6827-ae4d-48c9-b29b-43bea4d0ad85" name="Changes" comment="finished post" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -416,7 +399,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767642497236</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="finished post">
+      <option name="closed" value="true" />
+      <created>1769189475452</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1769189475452</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -452,6 +443,7 @@
     <MESSAGE value="working on post" />
     <MESSAGE value="added banner image" />
     <MESSAGE value="changed index.html layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed index.html layout" />
+    <MESSAGE value="finished post" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished post" />
   </component>
 </project>
