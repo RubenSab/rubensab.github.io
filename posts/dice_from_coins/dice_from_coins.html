@@ -37,13 +37,13 @@ We should have expected this because if we toss 5 coins, according to the rule w
 <p>Suppose we need to pick a number between 0 and 7 (8 sided dice).
 The idea is simple, we can <strong>chain choices</strong> like this:</p>
 <pre><code>1°       first toss, we choose either [0,1,2,3] or [4,5,6,7]
-/ \
-/   \
-/     \
+/ \\
+/   \\
+/     \\
 2°      2°   second toss, we can choose [0,1] or [2,3], [4, 5] or [6, 7]
-/ \     / \
+/ \\     / \\
 3°  3°  3°  3° third toss, we choose 0 or 1, 2 or 3, 4 or 5, 6 or 7
-/ \ / \ / \ / \
+/ \\ / \\ / \\ / \\
 0 1 2 3 4 5 6 7 (final states)
 
 </code></pre>
