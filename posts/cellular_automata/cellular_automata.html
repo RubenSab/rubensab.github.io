@@ -86,10 +86,10 @@ This is, by definition, the logic operation of <strong>exclusive or</strong> (XO
 <h3>Python Implementation</h3>
 <pre><code>cells = 1 # initial configuration = 0000...001
 for i in range(64): # repeat 65 times
-print(&quot;{:064b}&quot;.format(cells)) # print cell row (64 bits) in binary
-cells = cells ^ (cells &lt;&lt; 1)
+    print(&quot;{:064b}&quot;.format(cells)) # print cell row (64 bits) in binary
+    cells = cells ^ (cells &lt;&lt; 1)
 </code></pre>
-<pre><code>output:
+<pre><code>output: 
 
 00000000000000000000000000000001
 00000000000000000000000000000011
