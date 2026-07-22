@@ -25,12 +25,12 @@
 <p>First of all, what does rule 102 even mean? It's a <strong>rule set</strong> that considers every possible situation in which a cell could be in a moment and computes its <strong>next state</strong>.</p>
 <p><img alt="rule 102" src="1_imgs/rule102.png" /></p>
 <p>Let's see: <strong>for every cell in the line</strong> we can say that a <strong>cell</strong> and its <strong>left/right neighbours</strong> can be either 0 or 1, so there are 2^3 = <strong>8 possible combinations</strong> of these three. Every combination can result in the cell changing its state to 0 or 1, so we can start writing a <strong>truth table</strong>, considering the current states of left/central/right cells as <strong>inputs</strong>, and the next state of the central as the <strong>output</strong>.</p>
-<p>```
-L = left cell
+<pre><code>L = left cell
 C = central cell
 R = right cell
-C' = C next state</p>
-<p>L C R | C'
+C' = C next state
+
+L C R | C'
 0 0 0 | ?
 0 0 1 | ?
 0 1 0 | ?
@@ -39,9 +39,9 @@ C' = C next state</p>
 1 0 1 | ?
 1 1 0 | ?
 1 1 1 | ?
-```</p>
+</code></pre>
 <p>102 is simply a compact way to express every output (C') mapped to every input configuration (L C R): in binary 102 is 01100110, so we write it in the truth table from top to bottom.</p>
-<p><code>L C R | C'
+<pre><code>L C R | C'
 0 0 0 | 0
 0 0 1 | 1
 0 1 0 | 1
@@ -49,7 +49,8 @@ C' = C next state</p>
 1 0 0 | 0
 1 0 1 | 1
 1 1 0 | 1
-1 1 1 | 0</code></p>
+1 1 1 | 0
+</code></pre>
 <p>To make a <strong>naive implementation</strong> in our programming language of choice, we could:</p>
 <ol>
 <li><strong>Loop</strong> on every cell of the <strong>current line</strong></li>
@@ -83,13 +84,14 @@ This is, by definition, the logic operation of <strong>exclusive or</strong> (XO
 </ol>
 <p>The complexity went from O(n^2) to O(n), isn't that amazing?</p>
 <h3>Python Implementation</h3>
-<p><code>cells = 1 # initial configuration = 0000...001
+<pre><code>cells = 1 # initial configuration = 0000...001
 for i in range(64): # repeat 65 times
-print("{:064b}".format(cells)) # print cell row (64 bits) in binary
-cells = cells ^ (cells &lt;&lt; 1)</code></p>
-<p>```
-output:</p>
-<p>00000000000000000000000000000001
+print(&quot;{:064b}&quot;.format(cells)) # print cell row (64 bits) in binary
+cells = cells ^ (cells &lt;&lt; 1)
+</code></pre>
+<pre><code>output:
+
+00000000000000000000000000000001
 00000000000000000000000000000011
 00000000000000000000000000000101
 00000000000000000000000000001111
@@ -121,7 +123,7 @@ output:</p>
 00110011001100110011001100110011
 01010101010101010101010101010101
 11111111111111111111111111111111
-```</p>
+</code></pre>
         </div>
     </body>
 </html>

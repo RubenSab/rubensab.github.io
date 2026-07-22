@@ -56,21 +56,25 @@
 <h2>Power optimization</h2>
 <h3>Don't suspend when the lid is closed</h3>
 <p>I made the PC not suspend itself if the lid is closed, by editing <code>/etc/systemd/logind.conf</code> and setting:</p>
-<p><code>HandleLidSwitch=ignore
+<pre><code>HandleLidSwitch=ignore
 HandleLidSwitchExternalPower=ignore
 HandleLidSwitchDocked=ignore
-LidSwitchIgnoreInhibited=no</code></p>
+LidSwitchIgnoreInhibited=no
+</code></pre>
 <p><em>Note: If you do this, remember to remove the # before each line you edit.</em></p>
 <p>Then I applied the changes with: <code>sudo systemctl restart systemd-logind</code></p>
 <h3>Remove the GUI, boot into text mode</h3>
 <p>I also removed the <strong>desktop environment</strong> (Xfce) and its packages altogether to minimize power consumption:</p>
-<p><code>sudo apt purge xfce4 xfce4-*
-sudo apt autoremove</code></p>
+<pre><code>sudo apt purge xfce4 xfce4-*
+sudo apt autoremove
+</code></pre>
 <p>Then I disabled the Display Manager:</p>
-<p><code>sudo systemctl disable lightdm
-sudo systemctl stop lightdm</code></p>
+<pre><code>sudo systemctl disable lightdm
+sudo systemctl stop lightdm
+</code></pre>
 <p>And made systemd boot into <strong>multi-user (text) mode</strong>:</p>
-<p><code>sudo systemctl set-default multi-user.target</code></p>
+<pre><code>sudo systemctl set-default multi-user.target
+</code></pre>
 <h2>Estimate server's electricity monthly cost</h2>
 <p>Run <code>cat /sys/class/power_supply/BAT1/voltage_now</code> to get the <strong>microvolts</strong> used by your computer.</p>
 <p>Assuming that the voltage is constant, the formula for <strong>hourly cost</strong> is</p>
@@ -88,9 +92,10 @@ sudo systemctl stop lightdm</code></p>
 <h2>Automating tasks</h2>
 <p>You can use Cron, a powerful utility to launch processes according to a schedule, to automate tasks such as backups.</p>
 <p>You need to run <code>crontab -e</code> and append scheduled commands in the file.</p>
-<p><code>0 18 * * * git -C /home/ruben/homeserver/repos/active/wiki-sapienza-informatica pull
+<pre><code>0 18 * * * git -C /home/ruben/homeserver/repos/active/wiki-sapienza-informatica pull
 0 0 * * 1  git -C /home/ruben/homeserver/repos/active/stackade pull
-0 0 * * 1  git -C /home/ruben/homeserver/repos/active/rubensab.github.io pull</code></p>
+0 0 * * 1  git -C /home/ruben/homeserver/repos/active/rubensab.github.io pull
+</code></pre>
 <p>For example here I'm scheduling the pull of some GitHub repos: the first one every day at 18:00 and the other two every Monday at midnight. You can learn and generate this syntax on <a href="https://crontab.guru/">Crontab Guru</a>.</p>
 <p><img alt="Crontab Guru Screenshot" src="crontab_guru.png" /></p>
 <h2>SSH connection for special tasks</h2>
