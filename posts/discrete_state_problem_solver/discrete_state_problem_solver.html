@@ -3,22 +3,23 @@
     <head>
 		<meta charset="UTF-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1.00, maximum-scale=2.00, minimum-scale=1.00">
-        <title>Designing a Discrete-State Problem Solver</title>
         <link rel="stylesheet" href="../../context/stylesheets/implicit.css" type="text/css">
-<link rel="stylesheet" href="../../context/stylesheets/post.css" type="text/css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">    
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}]});"></script>
     </head>
     <body>
         <div class="container">
-            <a href="../../boards/posts.html" class="back-link">{ Back to posts }</a>
             <div class="header">
-<div class="thumbnail"><img src="8.png" alt="Thumbnail"></div>
-<div class="title"><h1>Designing a Discrete-State Problem Solver</h1></div>
-<div class="date">16-11-2025</div>
 </div>
-            <p>Some days ago I finally finished coding the first stable version of the interpreter for <a href="https://github.com/RubenSab/Stackade">{ Stackade }</a>, my programming language.</p>
+            <h2>updated_at: 2026-07-22T17:46:27.054+02:00</h2>
+<p>title: Designing a Discrete-State Problem Solver
+thumbnail: 8.png
+created: 16-11-2025
+boards: posts, projects
+css: post</p>
+<hr />
+<p>Some days ago I finally finished coding the first stable version of the interpreter for <a href="https://github.com/RubenSab/Stackade">{ Stackade }</a>, my programming language.</p>
 <p>Getting tired of testing solutions for increasingly complex and language-specific problems, a rather "simple" problem (or so I thought) piqued my interest, one of a more abstract nature.</p>
 <h1>A "simple" problem</h1>
 <p>The most natural structure you can work with in Stackade is the <strong>Stack</strong>, which is basically a <strong>pile of elements</strong> and nothing more.</p>
@@ -44,7 +45,9 @@
 <blockquote>
 <p>In computer science, a state space is a discrete space representing the set of <strong>all possible configurations of a system.</strong></p>
 </blockquote>
-<p>For example, the "ab" -&gt; "abab" problem lives in this "state space"<img alt="Problem's state space" src="state_space.png" /> which has 3 "islands", or more appropriately <strong><em>disjointed classes</em></strong>, meaning that if you start from a state inside one class, you will never be able to reach your desired end if it's inside another class. For example, you can't reach "aaa" from "ab".</p>
+<p>For example, the "ab" -&gt; "abab" problem lives in this "state space"</p>
+<p><img alt="Problem's state space" src="state_space.png" /></p>
+<p>which has 3 "islands", or more appropriately <strong><em>disjointed classes</em></strong>, meaning that if you start from a state inside one class, you will never be able to reach your desired end if it's inside another class. For example, you can't reach "aaa" from "ab".</p>
 <ul>
 <li>red arrows = <code>dup</code> rule</li>
 <li>blue arrows = <code>swap</code> rule</li>
