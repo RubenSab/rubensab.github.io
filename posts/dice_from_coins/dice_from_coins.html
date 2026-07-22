@@ -57,7 +57,7 @@ The idea is simple, we can <strong>chain choices</strong> like this:</p>
 <p>As it is, we can only have dices whose number of faces is a <strong>power of two</strong>, but the initial request deals with <strong>any</strong> possible range.</p>
 <p>To simulate a 6 sided dice, we can <strong>toss 3 coins</strong> like before, as 2^3 (8) is the smallest power of two larger than 6, but we need a way to adapt the range [0; 7] to the range [0; 5].</p>
 <h3>Wrapping numbers around a wheel?</h3>
-<p>To solve the problem quickly, we could <strong>map</strong> the range $[0; 2^{n}]$ to our desired range.</p>
+<p>To solve the problem quickly, we could <strong>map</strong> the range &lt;&lt;<MATH_0>&gt;&gt; to our desired range.</p>
 <p>The <strong>modulo</strong> operator (%) appears to fit the job nicely, because it "<strong>wraps</strong>" the <strong>infinite number line</strong> into a <strong>finite wheel</strong>. Think of it like a <strong>12 hours clock</strong> marking the infinite passing of hours.</p>
 <p>Concretely, here's how the mapping is done:</p>
 <pre><code>0 1 2 3 4 5 6 7    [0; 8] range
