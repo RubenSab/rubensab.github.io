@@ -81,7 +81,9 @@ sudo systemctl stop lightdm
 <h2>Estimate server's electricity monthly cost</h2>
 <p>Run <code>cat /sys/class/power_supply/BAT1/voltage_now</code> to get the <strong>microvolts</strong> used by your computer.</p>
 <p>Assuming that the voltage is constant, the formula for <strong>hourly cost</strong> is</p>
-<p>[\frac{\frac{\mu V}{1000000} \cdot A}{1000} \cdot kWh€]</p>
+<p>$$
+[\frac{\frac{\mu V}{1000000} \cdot A}{1000} \cdot kWh€]
+$$</p>
 <p>where:</p>
 <ul>
 <li>(\mu V) is the voltage in <strong>microvolts</strong> given by the command;</li>
