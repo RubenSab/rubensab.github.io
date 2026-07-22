@@ -15,7 +15,8 @@
 <div class="title"><h1>Simulating any dice with coin flips (random number generation)</h1></div>
 <div class="date">06-08-2025</div>
 </div>
-            <p>Some times ago, while designing a custom <a href="https://github.com/RubenSab/Zedecim-ISA-emulator">CPU emulator</a>, I stumbled into a math problem: I needed to pick <strong>random whole numbers</strong> in <strong>any given range</strong> using only a (boolean) value that can casually become 0 or 1 if asked.</p>
+            <p>s
+Some times ago, while designing a custom <a href="https://github.com/RubenSab/Zedecim-ISA-emulator">CPU emulator</a>, I stumbled into a math problem: I needed to pick <strong>random whole numbers</strong> in <strong>any given range</strong> using only a (boolean) value that can casually become 0 or 1 if asked.</p>
 <p>Think of this random, two-sided value as a <strong>coin</strong> that can be tossed on its head (1) or tail (0), and imagine ranges from 0 to n as an n+1 sided <strong>dice</strong>.</p>
 <p>This simplification works because extracting a casual number from 20 to 25 can be thought as extracting it from 0 to 5 and adding a fixed offset, like 20 in this case.</p>
 <h1>First attempt, summing coin tosses</h1>

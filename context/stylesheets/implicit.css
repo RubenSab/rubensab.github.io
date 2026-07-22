@@ -103,6 +103,28 @@ code {
   font-size: 16px !important;
 }
 
+/* Preserve whitespace in pre blocks */
+pre {
+    white-space: pre !important;
+    font-family: var(--mono-font);
+    background-color: #1c1c1c;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+/* Block-level code inside pre */
+pre code {
+    display: block;
+    font-family: var(--mono-font);
+    color: var(--text-color);
+    background-color: transparent !important; /* Inherit from pre */
+    padding: 0;
+    border-radius: 0;
+    white-space: pre !important;
+}
+
 /* Inline code inside <p> (default inline behavior) */
 p code {
     font-family: var(--mono-font);
@@ -110,21 +132,7 @@ p code {
     background-color: #1c1c1c !important;
     padding: 0.1em 0.3em;
     border-radius: 6px;
-}
-
-/* Block-level code outside <p> (your custom style) */
-code:not(p code):not(li code) {
-    display: block;
-    font-family: var(--mono-font);
-    color: var(--text-color);
-    background-color: #1c1c1c !important;
-    padding: 10px;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    white-space: pre !important; /* Preserve line breaks and spaces */
-    margin-bottom: 20px !important;
-    margin-top: 0px !important;
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    white-space: normal; /* Inline code should wrap normally */
 }
 
 b, strong {
