@@ -55,7 +55,9 @@
 <p>Fun fact: as is stated in the title, chess default starting setup is objectively unfair, because white has around +20 centipawns of advantage.</p>
 </blockquote>
 <p>We can also <strong>normalize</strong> the <strong>evaluation in centipawns</strong> with the formula of the <strong>curve below</strong> to get the <strong>draw probability</strong> (assuming a "perfect" play), an effective measure of a position's fairness or <strong>balance</strong>.</p>
-<p><em>Draw probability % = 100 × 2^(-(centipawns/100)²)</em></p>
+<p>$$
+	ext{Draw probability \%} = 100 	imes 2^{-\left(\frac{	ext{centipawns}}{100}\right)^2}
+$$</p>
 <p><img alt="gaussian-like formula for draw probability" src="2_imgs/Pasted%20image%2020250606224822.png" /></p>
 <h2>Visualizing every combination's draw probability</h2>
 <p>After writing an running the python script for days, I was able to get a general overview of the draw probabilities according to which pawns were removed.</p>
