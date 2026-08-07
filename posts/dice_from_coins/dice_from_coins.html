@@ -48,7 +48,6 @@ The idea is simple, we can <strong>chain choices</strong> like this:</p>
  3°  3°  3°  3° third toss, we choose 0 or 1, 2 or 3, 4 or 5, 6 or 7
 / \ / \ / \ / \
 0 1 2 3 4 5 6 7 (final states)
-
 </code></pre>
 <p>This is a <strong>binary tree</strong>, because we start from the initial range, then we can <strong>branch left or right</strong> at every step in our path, finally reaching a number.</p>
 <p>A <strong>path in a binary tree is equivalent to a number</strong> written in binary, because 0 can be thought as <em>right</em> and 1 as <em>left</em>, so we can <strong>treat coin tosses as binary digits</strong> to get a random number.</p>
@@ -63,7 +62,6 @@ The idea is simple, we can <strong>chain choices</strong> like this:</p>
 <pre><code>0 1 2 3 4 5 6 7    [0; 8] range
 | | | | | | | |
 0 1 2 3 4 5 0 1    [0; 6] range
-
 </code></pre>
 <p>Despite being a <strong>quick fix</strong>, this approach is <strong>biased</strong>, because 2 numbers map to 0, another 2 map to 1, but only one number each maps to 2, 3, 4 and 5, so 0 and 1 will be more probable than other numbers.</p>
 <h3>Rejection sampling</h3>
