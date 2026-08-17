@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.00, maximum-scale=2.00, minimum-scale=1.00">
+        <title>Here's Janus, my static blog generator</title>
+        <link rel="stylesheet" href="../../context/stylesheets/implicit.css" type="text/css">
+<link rel="stylesheet" href="../../context/stylesheets/post.css" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">    
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\(', right: '\\)', display: false}, {left: '\\[', right: '\\]', display: true}]});"></script>
+    </head>
+    <body>
+        <div class="container">
+            <a href="../../boards/projects.html" class="back-link">{ Back to projects }</a>
+            <div class="header">
+<div class="thumbnail"><img src="white_logo.png" alt="Thumbnail"></div>
+<div class="title"><h1>Here's Janus, my static blog generator</h1></div>
+<div class="date">17-08-2026</div>
+</div>
+            <p>Over the past months I've been building <a href="https://github.com/RubenSab/JanusBlogMaker">Janus</a>, a SSG (<a href="https://en.wikipedia.org/wiki/Static_site_generator">Static Site Generator</a>) that takes a directory of posts written in Markdown and descriptions of "boards" (thematic collections of posts), then it "converts" the whole structure into a full HTML website with customizable styles, HTML templates for everything and aliases.</p>
+<p>The website itself that you are reading is built on Janus.</p>
+<p>You can read the full docs <a href="https://github.com/RubenSab/JanusBlogMaker/blob/main/README.md">here</a> on Github. It's easy to follow along and build your first website starting from the example blog.</p>
+<p>I've made several attempts but I was never satisfied with the output and the codebase itself.
+The main difficulty was defining a blog structure that could get rid of multiple <strong>"chicken or the egg"</strong> and <strong>separation of responsibility</strong> problems:</p>
+<ol>
+<li>Posts properties and content had to be extracted before writing board HTMLs, because boards have a list of clickable previews of their linked posts.</li>
+<li>Boards needed to be initialized before posts, because post properties include the boards that the post belongs to.</li>
+<li>An HTML page can't be the result of a simple conversion of its respective MD file, because there need to be templates.</li>
+<li>Both MD posts and HTML templates need to have dynamically translatable keywords (aliases), but templates <strong>themselves</strong> need to have translatable property keywords of the current file in conversion (which could be a post or a board), for example <code>projects</code>.</li>
+<li>I had to weigh the pros and cons of boards BEING (special) posts vs. boards HAVING a post (their description) plus other posts.</li>
+<li>In additions to those, I had to find out how to make relative paths that <strong>never</strong> refer to the website root, as links could have broken otherwise if you were to move the website from a root directory to another.</li>
+</ol>
+<p>That's how I solved these problems:</p>
+<ol>
+<li>Posts are objects with a dictionary of properties which can be extracted to write both the full post's HTML and its preview just by swapping templates.</li>
+<li>I initialize empty boards first, then write every post's HTML and at last write every board's HTML.</li>
+<li>Templates have a {CONTENT} keyword that gets replaced with the actual converted content.</li>
+<li>Alias translation is followed by another step to resolve post properties.</li>
+<li>Composition looked cleaner (boards HAVING a post).</li>
+<li>Just using <em>pathlib</em> wasn't enough, I had to make a structure in which every object knows a priori the paths of every linked page.</li>
+</ol>
+<p>This version is the result of the <strong>fouth attempt</strong> and I'd say I'm pretty satisfied with how things turned out this time.</p>
+        </div>
+    </body>
+</html>
