@@ -27,15 +27,15 @@ The main difficulty was defining a blog structure that could get rid of multiple
 <li>Posts properties and content had to be extracted before writing board HTMLs, because boards have a list of clickable previews of their linked posts.</li>
 <li>Boards needed to be initialized before posts, because post properties include the boards that the post belongs to.</li>
 <li>An HTML page can't be the result of a simple conversion of its respective MD file, because there need to be templates.</li>
-<li>Both MD posts and HTML templates need to have dynamically translatable keywords (aliases), but templates <strong>themselves</strong> need to have translatable property keywords of the current file in conversion (which could be a post or a board), for example <code>\{FIRST_BOARD\}</code>.</li>
+<li>Both MD posts and HTML templates need to have dynamically translatable keywords (aliases), but templates <strong>themselves</strong> need to have translatable property keywords of the current file in conversion (which could be a post or a board), for example <code>"FIRST_BOARD"</code>.</li>
 <li>I had to weigh the pros and cons of boards BEING (special) posts vs. boards HAVING a post (their description) plus other posts.</li>
 <li>In additions to those, I had to find out how to make relative paths that <strong>never</strong> refer to the website root, as links could have broken otherwise if you were to move the website from a root directory to another.</li>
 </ol>
 <p>That's how I solved these problems:</p>
 <ol>
 <li>Posts are objects with a dictionary of properties which can be extracted to write both the full post's HTML and its preview just by swapping templates.</li>
-<li>I initialize empty boards first, then write every post's HTML and at last write every board's HTML.</li>
-<li>Templates have a {CONTENT} keyword that gets replaced with the actual converted content.</li>
+<li><strong>Separate data extraction and writing</strong>: initialize empty boards first, then write every post's HTML and at last write every board's HTML.</li>
+<li>Templates have a "CONTENT" keyword that gets replaced with the actual converted content.</li>
 <li>Alias translation is followed by another step to resolve post properties.</li>
 <li>Composition looked cleaner (boards HAVING a post).</li>
 <li>Just using <em>pathlib</em> wasn't enough, I had to make a structure in which every object knows a priori the paths of every linked page.</li>
