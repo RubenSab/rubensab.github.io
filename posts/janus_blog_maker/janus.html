@@ -27,7 +27,7 @@ The main difficulty was defining a blog structure that could get rid of multiple
 <li>Posts properties and content had to be extracted before writing board HTMLs, because boards have a list of clickable previews of their linked posts.</li>
 <li>Boards needed to be initialized before posts, because post properties include the boards that the post belongs to.</li>
 <li>An HTML page can't be the result of a simple conversion of its respective MD file, because there need to be templates.</li>
-<li>Both MD posts and HTML templates need to have dynamically translatable keywords (aliases), but templates <strong>themselves</strong> need to have translatable property keywords of the current file in conversion (which could be a post or a board), for example <code>projects</code>.</li>
+<li>Both MD posts and HTML templates need to have dynamically translatable keywords (aliases), but templates <strong>themselves</strong> need to have translatable property keywords of the current file in conversion (which could be a post or a board), for example <code>\{FIRST_BOARD\}</code>.</li>
 <li>I had to weigh the pros and cons of boards BEING (special) posts vs. boards HAVING a post (their description) plus other posts.</li>
 <li>In additions to those, I had to find out how to make relative paths that <strong>never</strong> refer to the website root, as links could have broken otherwise if you were to move the website from a root directory to another.</li>
 </ol>
